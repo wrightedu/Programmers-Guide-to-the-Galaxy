@@ -17,9 +17,24 @@ and implies that you should be interested in all files that end with the charact
 useful to copy to other repositories that you create, although changes may be 
 necessary. 
 
+## Architecture
+
 To find out more about the files and folders, which will also get you up to speed on
 how to use this repository, check out the `ARCHITECTURE.md`. 
 
+## Contributing
+After you are familiar with the architecture of the project (in this project that means
+being comfortable with all of the skills in `Getting-Started`, you need to be sure you
+know the rules about contributing to the project.  For this there is the `CONTRIBUTING.md`.
 
+## Issues and Projects
+Most of the workflow on a project is done through issues and projects.  The [issues](https://github.com/cse-devteam/Programmers-Guide-to-the-Galaxy/issues)
+tab by default shows all open issues with the project.  And issue is a task, bug, feature 
+enhancement, or other thread of communication on a specific tracked topic.  Through issues
+and their associated comments we can communicate on what we are currently tackling.
+
+[Projects](https://github.com/cse-devteam/Programmers-Guide-to-the-Galaxy/projects) are github
+organizational tools that help you order and priortize work.  Most issues are immediately pushed
+into the default project board in a repository for assignment to a developer.
 
 
