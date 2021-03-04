@@ -3,7 +3,7 @@
 So you've stumbled into the unenviable position of having to figure out what to do.  
 Don't worry, there's a repository for that!  Ideally this repository will answer 
 all of your questions on Life, the universe, and everything; but in reality it 
-will only be able to help you get along working with a contantly revolving cast of
+will only be able to help you get along working with a constantly revolving cast of
 student developers that have found themselves doing much too much work for almost,
 but not entirely *unlike* enough money.
 
