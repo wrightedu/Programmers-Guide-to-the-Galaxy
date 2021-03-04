@@ -9,14 +9,14 @@ email, discord, or any other method with the owners of this repository before ma
 
 Please note we have a code of conduct, please follow it in all your interactions with the project.
 [Wright State University Code of Student Conduct](https://www.wright.edu/student-affairs/student-life/community-standards-and-student-conduct/code-of-student-conduct/section-vi-conduct-policies-code-of-student-conduct).
-We expect all contributors to conduct themselves by this code of conduct whther they are an alumni,
+We expect all contributors to conduct themselves by this code of conduct whether they are an alumni,
 faculty, student, or unaffiliated with the University.
 
 ## Pull Request Process
 
 1. Ensure any install or build dependencies, and any tokens/private keys are removed when doing a 
    build.
-2. Update the README.md with details of changes, this includes new environment 
+2. Update the README.md and other documentation with details of changes, this includes new environment 
    variables, exposed ports, useful file locations and container parameters.
 3. Increase the version numbers in any examples files and the README.md to the new version that this
    Pull Request would represent. The versioning scheme we use is [SemVer](http://semver.org/).
