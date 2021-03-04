@@ -7,7 +7,7 @@ will only be able to help you get along working with a contantly revolving cast 
 student developers that have found themselves doing much too much work for almost,
 but not entirely *unlike* enough money.
 
-"But how do I use this guide to make my life easier?" you might ask.  Good question!
+*"But how do I use this guide to make my life easier?"* you might ask.  Good question!
 This repository will provide exmaple files, walkthroughs, and simple instruction on
 many of the key areas you might need to get up to speed on before tackling projects
 with us.  Just check out the (hopefully) usefully named `*.md` files in this top 
