@@ -25,3 +25,14 @@ faculty, student, or unaffiliated with the University.
 
 Special Thanks: [PurpleBooth](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for this 
 awesome template `CONTRIBUTING.md`!
+
+## Getting up to speed
+Document how a new user might get up to speed on this project.  Be sure to outline any useful resources for 
+learning key tools or technologies that are required knowledge for the project.  This section will likely
+need to be written for each project.
+
+In this project, the purpose itself is to get up to speed.  So first you should check out the `ARCHITECTURE.md`
+file to get a feel for what information this repository has, then head over to `Getting-Started/` and make sure 
+you have a good working knowledge of everything in that folder.  From that point on check the README info in the
+Issues and Projects tabs on github, then you should be good to start working on other projects!  
+So long and thanks for all the [fish](https://github.com/fish-shell/fish-shell)!
