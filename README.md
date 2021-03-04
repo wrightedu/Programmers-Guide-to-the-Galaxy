@@ -24,7 +24,7 @@ how to use this repository, check out the `ARCHITECTURE.md`.
 
 ## Contributing
 After you are familiar with the architecture of the project (in this project that means
-being comfortable with all of the skills in `Getting-Started`, you need to be sure you
+being comfortable with all of the skills in `Getting-Started/`, you need to be sure you
 know the rules about contributing to the project.  For this there is the `CONTRIBUTING.md`.
 
 ## Issues and Projects
