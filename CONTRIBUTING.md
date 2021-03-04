@@ -1,6 +1,6 @@
 # Contributing
 
-An good `CONTRIBUTING.md` file should instruct the user on how to contribute to the project.  Include
+A good `CONTRIBUTING.md` file should instruct the user on how to contribute to the project.  Include
 any relevant policies and procedures, as well as any code of conduct or expectations on the user 
 to be followed while interacting with the authors/owners/other members on the project team. 
 
