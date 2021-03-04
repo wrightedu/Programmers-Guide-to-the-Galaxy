@@ -24,6 +24,3 @@ Basic guides to pre-requisite knowledge that will likely be needed by all.  Star
 ### `Advanced-Topics/`
 Guides to more advanced topics that might only apply to a specific project (or future project).
 
-### `Projects/` 
-Current and past project outlines will be here, as well as info and exercises 
-that will help you get up to speed on a given project or technology.
