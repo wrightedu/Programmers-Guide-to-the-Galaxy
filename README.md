@@ -8,12 +8,12 @@ student developers that have found themselves doing much too much work for almos
 but not entirely *unlike* enough money.
 
 *"But how do I use this guide to make my life easier?"* you might ask.  Good question!
-This repository will provide exmaple files, walkthroughs, and simple instruction on
+This repository will provide example files, walkthroughs, and simple instructions on
 many of the key areas you might need to get up to speed on before tackling projects
 with us.  Just check out the (hopefully) usefully named `*.md` files in this top 
 level directory. (Note: in the above name, the asterisk character `*` is a *wildcard*
 and implies that you should be interested in all files that end with the characters 
-`.md`).  Any files that are in all capitilzed letters, and the `.gitignore`  may be 
+`.md`).  Any files that are in all capitalized letters, and the `.gitignore`  may be 
 useful to copy to other repositories that you create, although changes may be 
 necessary. 
 
