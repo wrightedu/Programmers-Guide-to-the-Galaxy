@@ -27,7 +27,9 @@ My working draft:
 
 # Linux: The "Other" Operating System
 
-~ [Christian Peters]
+---
+
+~ _Christian Peters_
 
 ## Definition
 
@@ -36,7 +38,7 @@ My working draft:
 
 ## Getting Started
 
-Let's break down that tech-jargon Wikipedia article. Linux is an open source operating system, meaning that anyone (including you) can look at the source code and even modify it to fulfil your wildest dreams (Yes, really. People go nuts with this stuff. If you're interested, I would highly recommend checking out r/unixporn on Reddit). Linux is separated into "distributions" which are essentially just different versions of the OS with the only major difference being the package manager (the thing that manages packages... duh). Any Linux distribution can be downloaded and installed for free on any machine that you would like. However, you don't have to have a dedicated computer just to run Linux. There are many other ways to enjoy the OS even from the comfort of your native Windows environment!
+Let's break down that tech-jargon Wikipedia article. Linux is an open source operating system, meaning that anyone (including you) can look at the source code and even modify it to fulfil your wildest dreams (Yes, really. People go nuts with this stuff. If you're interested, I would highly recommend checking out r/unixporn on Reddit). Linux is separated into "distributions" which are essentially just different versions of the OS with the only major difference being the package manager (the thing that manages packages... duh). You can choose any linux distribution, **however for purposes of learning I would recommend installing Elementary OS**. Again, any Linux distribution can be downloaded and installed for free on any machine that you would like. However, you don't have to have a dedicated computer just to run Linux. There are many other ways to enjoy the OS even from the comfort of your native Windows environment!
 
 ### Linux for Windows? Say no more!
 
@@ -54,4 +56,20 @@ Then you probably don't need this guide, nerd.
 
 ## Linux Commands
 
-Now that you've got a Linux environment, it's time to get our hands dirty.
+Now that you've got a Linux environment to play around in, it's time to get our hands dirty. Open up your terminal and let's get started.
+
+#### pwd
+
+This is a great first command. The `pwd` command will tell you where you are in the file system. If you opened up a terminal in your 'home' directory, your output should look something like this: `/home/cpeters`. This is the path to the current working directory, or folder in layman's terms (pwd stands for Present Working Directory). This output is also known as an absolute path, meaning that it starts with the root directory (/) and continues forward to your current position.
+
+#### cd
+
+As the name suggests, `cd` stands for "Change Directory" (this will be a large topic, encompassing file paths, . and .. ) Try changing directories to your Desktop directory by typing `cd Desktop`. Keep in mind the shell is case sensitive, so be sure to replicate capitalization.
+
+#### But wait, I don't have to type the entire name?
+
+No you don't. Type `cd ..` and then `cd Dow[and then press tab]`. This should complete your entry to `cd Downloads/`. Hit enter and you should be in your Downloads folder. Pretty powerful, right?
+
+#### ls
+
+So we've covered how to see where you're at in the file system, how do you see what's inside the folder you're currently in? Well, theres a command for that. Type `ls` and hit enter. The contents of whatever directory you're in (check it with `pwd`!) should be printed out to the screen. But, that's just the name of the files and folders, which is LAME. To print out all the cool nerdy stats, type `ls -l` (standing for ls long). This should print out a bunch of cool information about the files and folders that are in your current working directory. To see hidden files, type `ls -al`. Well, now you know what's inside a directory - how do we make files to populate it?
