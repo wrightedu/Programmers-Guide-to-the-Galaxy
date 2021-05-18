@@ -9,13 +9,31 @@ Windows Subsystem for Linux (WSL)
 Linux directory and file permissions
 
 basic linux command line tools
-* cd, ls, cat, rm, mkdir, touch
-* vim
-* grep
-* sudo, su
-* apt
-* ssh
-* .bashrc
-* others?
 
+- cd, ls, cat, rm, mkdir, touch
+- vim
+- grep
+- sudo, su
+- apt
+- ssh
+- .bashrc
+- others?
 
+According to Hostinger (the first result on google) these are the 35 linux commands one should know. Hopefully we don't cover everything, but let's start somewhere:
+
+- pwd, cd, ls, cat, cp, mv, mkdir, rmdir, rm, touch, locate, find, grep, sudo, df, du, head, tail, diff, tar, chmod, chown, jobs, kill, ping, wget, uname, top, history, man, echo, zip, unzip, hostname, useradd, userdel, clear, TAB completion
+
+My working draft:
+
+# Linux: The Other Operating System
+
+~ [Christian Peters]
+
+## Definition
+
+> Linux is a family of open-source Unix-like operating systems based on the Linux kernel, an operating system kernel first released on September 17, 1991, by Linus Torvalds. Linux is typically packaged in a Linux distribution.
+> Popular Linux distributions include Debian, Fedora, and Ubuntu. Commercial distributions include Red Hat Enterprise Linux and SUSE Linux Enterprise Server. Desktop Linux distributions include a windowing system such as X11 or Wayland, and a desktop environment such as GNOME or KDE Plasma. Distributions intended for servers may omit graphics altogether, or include a solution stack such as LAMP. Because Linux is freely redistributable, anyone may create a distribution for any purpose. ([Wikipedia] (https://en.wikipedia.org/wiki/Linux))
+
+## Getting Started
+
+Let's break down that tech-jargon Wikipedia article. Linux is an open source operating system, meaning that anyone (including you) can look at the source code and even modify it to fulfil your wildest dreams (Yes, really. People go nuts with this stuff. If you're interested, I would highly recommend checking out r/unixporn on Reddit). Any Linux distribution can be downloaded and installed for free on any machine that you would like. However, you don't have to have a dedicated computer just to run Linux. There are many other ways to enjoy the OS from the comfort of even your native Windows environment!
