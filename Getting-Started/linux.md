@@ -75,3 +75,5 @@ No you don't. Type `cd ..` and then `cd Dow[and then press tab]`. This should co
 #### ls
 
 So we've covered how to see where you're at in the file system, how do you see what's inside the folder you're currently in? Well, theres a command for that. Type `ls` and hit enter. The contents of whatever directory you're in (check it with `pwd`!) should be printed out to the screen. But, that's just the name of the files and folders, which is LAME. To print out all the cool nerdy stats, type `ls -l` (standing for ls long). This should print out a bunch of cool information about the files and folders that are in your current working directory. To see hidden files, type `ls -al`. Well, now you know what's inside a directory - how do we make files to populate it?
+
+Arch stinks LOL
