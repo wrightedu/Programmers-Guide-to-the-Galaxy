@@ -25,7 +25,7 @@ According to Hostinger (the first result on google) these are the 35 linux comma
 
 My working draft:
 
-# Linux: The "Other" Operating System
+# Linux: _THE_ Operating System
 
 ---
 
@@ -33,8 +33,10 @@ My working draft:
 
 ## Definition
 
+> "Linux is an operating system designed _by_ developers _for_ developers." - Dr. Doom
+
 > Linux is a family of open-source Unix-like operating systems based on the Linux kernel, an operating system kernel first released on September 17, 1991, by Linus Torvalds. Linux is typically packaged in a Linux distribution.
-> Popular Linux distributions include Debian, Fedora, and Ubuntu. Commercial distributions include Red Hat Enterprise Linux and SUSE Linux Enterprise Server. Desktop Linux distributions include a windowing system such as X11 or Wayland, and a desktop environment such as GNOME or KDE Plasma. Distributions intended for servers may omit graphics altogether, or include a solution stack such as LAMP. Because Linux is freely redistributable, anyone may create a distribution for any purpose. ([Wikipedia] (https://en.wikipedia.org/wiki/Linux))
+> Popular Linux distributions include Debian, Fedora, and Ubuntu. Commercial distributions include Red Hat Enterprise Linux and SUSE Linux Enterprise Server. Desktop Linux distributions include a windowing system such as X11 or Wayland, and a desktop environment such as GNOME or KDE Plasma. Distributions intended for servers may omit graphics altogether, or include a solution stack such as LAMP. Because Linux is freely redistributable, anyone may create a distribution for any purpose. [Wikipedia](https://en.wikipedia.org/wiki/Linux)
 
 ## Getting Started
 
