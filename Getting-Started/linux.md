@@ -46,11 +46,13 @@ There are several ways to enjoy Linux, but if you're using Windows (which honest
 
 #### Windows Subsystem for Linux (WSL)
 
+Going to set this up on my laptop and do a step by step walkthough of that.
+
 #### Spinning up a Linux Virtual Machine
 
 So you've gotten more familiar with Linux, but don't want to wipe your Windows machine and start over just yet. At this point, a Virtual Machine, or VM, would be good for you. This is essentially, a machine inside of a machine. There are many programs that will run virtual machines, but VirtualBox is my personal favorite. Go to [this website](https://www.wikihow.com/Install-VirtualBox) and take a look on how to install VirtualBox (link is applicable to Windows as well as Mac).
 
-Once you have VirtualBox installed, you are now ready to download a VM and get started. (do we want Elementary as an install or Ubuntu to start out with?)
+Once you have VirtualBox installed, you are now ready to download a VM and get started. (**do we want Elementary as an install or Ubuntu to start out with?**)
 
 ### What if I'm on a Mac?
 
@@ -70,6 +72,18 @@ The web has thousands of complicated linux guides teaching you everything you ne
 
 ### VSCode
 
+VSCode is awesome. Simply put, it is the best IDE (Integrated Development Environment) around. If you've taken any sort of coding class in the past, you might have messed around with programs like Eclipse or NetBeans. Throw those out the window. Once you go to VSCode, you'll never go back.
+
+On your Linux machine, go to the [VSCode website](https://code.visualstudio.com/download) and download the `.deb` file. Change directories to your Downloads (`cd Downloads`) and use the `dpkg` command with the `-i` suffix to install VSCode (`dpkg -i PACKAGE_NAME`). To launch VSCode, simply switch to a directory with a project and type `code .` which will launch VSCode in the current directory.
+
+_Now that they have it installed, do we want to walk them through extensions?_
+
 ### Anaconda
+
+Now that we've got a coding environment, let's install Anaconda. Wright State's native computer wizard Ryan Slater explains Anaconda pretty well:
+
+> The big reason to use Anaconda over plain old boring Python is how Anaconda handles environments. Environments are basically virtual machines, but for Python. They have some version of Python installed, and some specified set of modules. They are completely separate and independent from your core Python installation, meaning you can easily spin up different combinations of modules and versions without affecting your host OS. This is great for testing your code on old versions of modules, trying beta features, or for setting up a module that might break some other module you use. Below are a list of useful commands. Check out the [documentation](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands) for more information.
+
+If you want more of that, check out Ryan's Python guide [here](https://github.com/cse-devteam/Programmers-Guide-to-the-Galaxy/blob/master/Getting-Started/python.md). Really, you should.
 
 Which is... what?
