@@ -56,7 +56,7 @@ Once you have VirtualBox installed, you are now ready to download a VM and get s
 
 ### What if I'm on a Mac?
 
-Fun fact: MacOS is _Unix-based_. No, this isn't some term from the Matrix, this means that MacOS is built off of the core operating system called Unix. Linux is also built off of Unix, meaning that most Linux commands work on a Mac system (**need a fact check here**). Ever opened up a terminal on your Mac? Chances are, you haven't. Well, change that. Do a spotlight search and open up a terminal
+Fun fact: MacOS is _Unix-based_. No, this isn't some term from the Matrix, this means that MacOS is built off of the core operating system called Unix. Linux is also built off of Unix, meaning that most Linux commands work on a Mac system (**need a fact check here**). Ever opened up a terminal on your Mac? Chances are, you haven't. Well, change that. Do a spotlight search and open up a terminal. Test out some of the commands in the guide linked above and observe what they do. Keep in mind that Mac is NOT Linux, but some of the commands have the same effect. If you want to mess with Linux more, I would recommend installing a VM through VirtualBox. 
 
 ### What if I'm using Linux already?
 
