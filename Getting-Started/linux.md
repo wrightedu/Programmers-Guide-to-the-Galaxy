@@ -27,8 +27,6 @@ My working draft:
 
 # Linux: _THE_ Operating System
 
----
-
 ~ _Christian Peters_
 
 ## Definition
@@ -58,7 +56,9 @@ Then you probably don't need this guide, nerd.
 
 ## Linux Commands
 
-Now that you've got a Linux environment to play around in, it's time to get our hands dirty. Open up your terminal and let's get started.
+Now that you've got a Linux environment to play around in, it's time to get your hands dirty and work with some commands. For most instances, you will only have to know a core group of commands, as well as have the ability to look up unfamiliar ones by either using the terminal, or your preferred web browser.
+
+The web has thousands of complicated linux guides teaching you everything you need to know. Right now, let's focus on the basics. Walk through [this command overview](https://www.hostinger.com/tutorials/linux-commands) or one you find on Google on a local terminal. Again, this is not meant to be complicated. We just want you to get familiar with the _core group_ of commands. Practice a few times and learn to recognize the outputs of each command. It can be a bit daunting if you've never worked with a terminal environment before, but remember: _the man page is your friend_. Once you feel comfortable with the majority of the commands, move on to the next portion of this guide.
 
 #### pwd
 
