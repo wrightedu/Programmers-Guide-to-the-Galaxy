@@ -38,7 +38,7 @@ My working draft:
 
 ## Getting Started
 
-Let's break down that tech-jargon Wikipedia article. Linux is an open source operating system, meaning that anyone (including you) can look at the source code and even modify it to fulfil your wildest dreams (Yes, really. People go nuts with this stuff. If you're interested, I would highly recommend checking out r/unixporn on Reddit). Linux is separated into "distributions" which are essentially just different versions of the OS with the only major difference being the package manager (the thing that manages packages... duh). You can choose any linux distribution, **however for purposes of learning I would recommend installing Elementary OS**. Again, any Linux distribution can be downloaded and installed for free on any machine that you would like. However, you don't have to have a dedicated computer just to run Linux. There are many other ways to enjoy the OS even from the comfort of your native Windows environment!
+Let's break down that tech-jargon Wikipedia article. Linux is an open source operating system, meaning that anyone (including you) can look at the source code and even modify it to fulfil your wildest dreams (Yes, really. People go nuts with this stuff. If you're interested, I would highly recommend checking out r/unixporn on Reddit). Linux is separated into "distributions" which are essentially just different versions of the OS with the only major difference being the package manager (the thing that manages packages... duh). You can choose any linux distribution, **however for purposes of learning I would recommend installing Elementary OS**. (probably put in a download link?) Again, any Linux distribution can be downloaded and installed for free on any machine that you would like. However, you don't have to have a dedicated computer just to run Linux. There are many other ways to enjoy the OS even from the comfort of your native Windows environment!
 
 ### Linux for Windows? Say no more!
 
@@ -48,7 +48,13 @@ There are several ways to enjoy Linux, but if you're using Windows (which honest
 
 #### Spinning up a Linux Virtual Machine
 
+So you've gotten more familiar with Linux, but don't want to wipe your Windows machine and start over just yet. At this point, a Virtual Machine, or VM, would be good for you. This is essentially, a machine inside of a machine. There are many programs that will run virtual machines, but VirtualBox is my personal favorite. Go to [this website](https://www.wikihow.com/Install-VirtualBox) and take a look on how to install VirtualBox (link is applicable to Windows as well as Mac).
+
+Once you have VirtualBox installed, you are now ready to download a VM and get started. (do we want Elementary as an install or Ubuntu to start out with?)
+
 ### What if I'm on a Mac?
+
+Fun fact: MacOS is _Unix-based_. No, this isn't some term from the Matrix, this means that MacOS is built off of the core operating system called Unix. Linux is also built off of Unix, meaning that most Linux commands work on a Mac system (**need a fact check here**). Ever opened up a terminal on your Mac? Chances are, you haven't. Well, change that. Do a spotlight search and open up a terminal
 
 ### What if I'm using Linux already?
 
@@ -60,22 +66,10 @@ Now that you've got a Linux environment to play around in, it's time to get your
 
 The web has thousands of complicated linux guides teaching you everything you need to know. Right now, let's focus on the basics. Walk through [this command overview](https://www.hostinger.com/tutorials/linux-commands) or one you find on Google on a local terminal. Again, this is not meant to be complicated. We just want you to get familiar with the _core group_ of commands. Practice a few times and learn to recognize the outputs of each command. It can be a bit daunting if you've never worked with a terminal environment before, but remember: _the man page is your friend_. Once you feel comfortable with the majority of the commands, move on to the next portion of this guide.
 
-#### pwd
+## Further Configuration
 
-This is a great first command. The `pwd` command will tell you where you are in the file system. If you opened up a terminal in your 'home' directory, your output should look something like this: `/home/cpeters`. This is the path to the current working directory, or folder in layman's terms (pwd stands for Present Working Directory). This output is also known as an absolute path, meaning that it starts with the root directory (/) and continues forward to your current position.
+### VSCode
 
-#### cd
+### Anaconda
 
-As the name suggests, `cd` stands for "Change Directory" (this will be a large topic, encompassing file paths, . and .. ) Try changing directories to your Desktop directory by typing `cd Desktop`. Keep in mind the shell is case sensitive, so be sure to replicate capitalization.
-
-#### But wait, I don't have to type the entire name?
-
-No you don't. Type `cd ..` and then `cd Dow[and then press tab]`. This should complete your entry to `cd Downloads/`. Hit enter and you should be in your Downloads folder. Pretty powerful, right?
-
-#### ls
-
-So we've covered how to see where you're at in the file system, how do you see what's inside the folder you're currently in? Well, theres a command for that. Type `ls` and hit enter. The contents of whatever directory you're in (check it with `pwd`!) should be printed out to the screen. But, that's just the name of the files and folders, which is LAME. To print out all the cool nerdy stats, type `ls -l` (standing for ls long). This should print out a bunch of cool information about the files and folders that are in your current working directory. To see hidden files, type `ls -al`. Well, now you know what's inside a directory - how do we make files to populate it?
-
-Arch stinks LOL
-
-SSH Keys are awesome!
+Which is... what?
