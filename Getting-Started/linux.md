@@ -46,7 +46,11 @@ There are several ways to enjoy Linux, but if you're using Windows (which honest
 
 #### Windows Subsystem for Linux (WSL)
 
-Going to set this up on my laptop and do a step by step walkthough of that.
+Believe it or not, Windows has a feature that lets you use Linux INSIDE of Windows! Crazy right? Dr Wikipedia explains it like this:
+
+> Windows Subsystem for Linux (WSL) is a compatibility layer for running Linux binary executables (in ELF format) natively on Windows 10 and Windows Server 2019. ... Since June 2019, WSL 2 is available to Windows 10 customers through the Windows Insider program, including the Home edition. [Wikipedia](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux)
+
+It essentially gives you the ability to play around with Linux commands in your own Windows environment. If you just want to dip your toes in the theoretical Linux lake, take a look at [this guide](https://www.wikihow.com/Enable-the-Windows-Subsystem-for-Linux) to enable WSL for your local Windows machine.
 
 #### Spinning up a Linux Virtual Machine
 
