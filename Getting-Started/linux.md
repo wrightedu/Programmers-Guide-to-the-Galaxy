@@ -1,30 +1,3 @@
-# Linux or: How I Learned to Stop Worrying and Love the Vim
-
-This file should cover the following:
-
-choosing a distro (Elementary recommended)
-
-Windows Subsystem for Linux (WSL)
-
-Linux directory and file permissions
-
-basic linux command line tools
-
-- cd, ls, cat, rm, mkdir, touch
-- vim
-- grep
-- sudo, su
-- apt
-- ssh
-- .bashrc
-- others?
-
-According to Hostinger (the first result on google) these are the 35 linux commands one should know. Hopefully we don't cover everything, but let's start somewhere:
-
-- pwd, cd, ls, cat, cp, mv, mkdir, rmdir, rm, touch, locate, find, grep, sudo, df, du, head, tail, diff, tar, chmod, chown, jobs, kill, ping, wget, uname, top, history, man, echo, zip, unzip, hostname, useradd, userdel, clear, TAB completion
-
-My working draft:
-
 # Linux: _THE_ Operating System
 
 ~ _Christian Peters_
