@@ -57,6 +57,22 @@ The web has thousands of Linux guides that can teach you everything you need to 
 
 ## File and Directory Permissions
 
+In Linux, _it's all about the permissions_. Files, directories, you name it, they all have permissions on who can read, write or execute a given entity. For a given file, there are three groups that have a varying configuration of these permission levels: owner, group and all users.
+
+This means that only if you have the given permissions, will you then be able to manipulate a file or directory.
+
+Here's an example of an `ls -l` on an example directory:
+```
+drwxr-xr-x 2 cpeters cpeters 4096 May 25 12:54 dir1
+-rw-r-x--- 1 cpeters cpeters    0 May 25 12:40 file1
+-rwxr--r-- 1 cpeters cpeters    0 May 25 12:40 file2
+-rw-r--rwx 1 cpeters cpeters    0 May 25 12:40 file3
+```
+
+Notice here that there are three groups of 'rwx' meaning the first is the user, second is the group and the third is the other portions of the user base. Notice also that file1 can be read and written by the user, but only members of a specific group can execute th file. See also that the directory has a 'd' in front of the permissions to signifiy it is a directory.
+
+To learn more about file and directory permissions, click [this link](https://www.linux.com/training-tutorials/understanding-linux-file-permissions/) to go to the official Linux description on the topic. 
+
 ## Further Configuration
 
 ### VSCode
