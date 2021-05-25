@@ -1,17 +1,25 @@
-# Linux: _THE_ Operating System
+# Why do Astronauts use Linux? Because you can't open Windows in space...
 
 ~ _Christian Peters_
 
 ## Definition
 
-"Linux is an operating system designed _by_ developers _for_ developers." - [Dr. Travis Doom](https://people.wright.edu/travis.doom)
+"Linux is a system designed _by_ developers _for_ developers." - [Dr. Travis Doom](https://people.wright.edu/travis.doom)
 
 > Linux is a family of open-source Unix-like operating systems based on the Linux kernel, an operating system kernel first released on September 17, 1991, by Linus Torvalds. Linux is typically packaged in a Linux distribution.
 > Popular Linux distributions include Debian, Fedora, and Ubuntu. Commercial distributions include Red Hat Enterprise Linux and SUSE Linux Enterprise Server. Desktop Linux distributions include a windowing system such as X11 or Wayland, and a desktop environment such as GNOME or KDE Plasma. Distributions intended for servers may omit graphics altogether, or include a solution stack such as LAMP. Because Linux is freely redistributable, anyone may create a distribution for any purpose. [Wikipedia](https://en.wikipedia.org/wiki/Linux)
 
 ## Getting Started
 
-Let's break down that tech-jargon Wikipedia article. Linux is an open source operating system, meaning that anyone (including you) can look at the source code and even modify it to fulfil your wildest dreams (Yes, really. People go nuts with this stuff. If you're interested, I would highly recommend checking out r/unixporn on Reddit). Linux is separated into "distributions" which are essentially just different versions of the OS with the only major difference being the package manager (the thing that manages packages... duh). You can choose any Linux distribution, **however for purposes of learning, I would recommend installing Elementary OS,** which can be downloaded [here](https://elementary.io). Fair warning, this OS is a "pay what you want" meaning if you want it for free, enter $0 in the place to pay for the link.
+Let's break down that tech-jargon Wikipedia article. Linux is actually NOT an OS. Linux is the kernel. Linux distributions are OSes. There's a famous copypasta about this:
+
+> What you’re referring to as Linux, is in fact, GNU/Linux, or as I’ve recently taken to calling it, GNU plus Linux. Linux is not an operating system unto itself, but rather another free component of a fully functioning GNU system made useful by the GNU corelibs, shell utilities and vital system components comprising a full OS as defined by POSIX.
+
+> Many computer users run a modified version of the GNU system every day, without realizing it. Through a peculiar turn of events, the version of GNU which is widely used today is often called “Linux”, and many of its users are not aware that it is basically the GNU system, developed by the GNU Project. There really is a Linux, and these people are using it, but it is just a part of the system they use.
+
+> Linux is the kernel: the program in the system that allocates the machine’s resources to the other programs that you run. The kernel is an essential part of an operating system, but useless by itself; it can only function in the context of a complete operating system. Linux is normally used in combination with the GNU operating system: the whole system is basically GNU with Linux added, or GNU/Linux. All the so-called “Linux” distributions are really distributions of GNU/Linux.
+
+Linux is open source, meaning that anyone (including you) can look at the source code and even modify it to fulfil your wildest dreams (Yes, really. People go nuts with this stuff. If you're interested, I would highly recommend checking out r/unixporn on Reddit). Linux is separated into "distributions" which are essentially just different OS versions with the only major difference being the package manager (the thing that manages packages... duh). Again, Linux distros aren't _technically_ Linux, however it's the norm just to call it that to make it easier. You can choose any Linux distribution, **however for purposes of learning, I would recommend installing Elementary OS,** which can be downloaded [here](https://elementary.io). Fair warning, this OS is a "pay what you want" meaning if you want it for free, enter $0 in the place to pay for the link.
 
 Again, any Linux distribution can be downloaded and installed for free on any machine that you would like. However, you don't have to have a dedicated computer just to run Linux. There are many other ways to enjoy the OS even from the comfort of your native Windows environment!
 
@@ -31,11 +39,11 @@ It essentially gives you the ability to play around with Linux commands in your 
 
 So you've gotten more familiar with Linux, but don't want to wipe your Windows machine and start over just yet. At this point, a Virtual Machine, or VM, would be good for you. This is essentially, a machine inside of a machine. There are many programs that will run virtual machines, but VirtualBox is my personal favorite. Go to [this website](https://www.wikihow.com/Install-VirtualBox) and take a look on how to install VirtualBox (link is applicable to Windows as well as Mac).
 
-Once you have VirtualBox installed, you are now ready to download a VM and get started. (**do we want Elementary as an install or Ubuntu to start out with?**)
+Once you have VirtualBox installed, you are now ready to download a VM and get started. Take a look at [this guide](https://medium.com/analytics-vidhya/installing-elementaryos-5-1-on-oracle-virtualbox-6cd3b02e480d) to learn how to install Elementary OS on your newly installed VirtualBox software.
 
 ### What if I'm on a Mac?
 
-Fun fact: MacOS is _Unix-based_. No, this isn't some term from the Matrix, this means that MacOS is built off of the core operating system called Unix. Linux is also built off of Unix, meaning that most Linux commands work on a Mac system (**need a fact check here**). Ever opened up a terminal on your Mac? Chances are, you haven't. Well, change that. Do a spotlight search and open up a terminal. Test out some of the commands in the guide linked above and observe what they do. Keep in mind that Mac is NOT Linux, but some of the commands have the same effect. If you want to mess with Linux more, I would recommend installing a VM through VirtualBox.
+Fun fact: MacOS is _Unix-based_. No, this isn't some term from the Matrix, this means that MacOS is built off of the core operating system family called Unix. Linux is also built off of Unix, meaning that most Linux commands work on a Mac system because they are _Unix-like_ meaning that any Unix-based OS should be able to run any other Unix-based OS commands. Ever opened up a terminal on your Mac? Chances are, you haven't. Well, change that. Do a spotlight search and open up a terminal. Test out some of the commands in the guide linked above and observe what they do. NOTE: You are working in your actual native file system and can actually mess up real files if you make the wrong commands (for example, I wouldn't run `rm -r *` in a directory because it deletes the entirety of it). Keep in mind that Mac is NOT Linux, but some of the commands have the same effect. If you want to mess with Linux more, I would recommend installing a VM through VirtualBox.
 
 ### What if I'm using Linux already?
 
@@ -47,22 +55,22 @@ Now that you've got a Linux environment to play around in, it's time to get your
 
 The web has thousands of Linux guides that can teach you everything you need to know. Right now, let's focus on the basics. Walk through [this command overview](https://www.hostinger.com/tutorials/Linux-commands) or one you find on Google on a local terminal. Again, this is not meant to be complicated. We just want you to get familiar with the _core group_ of commands. Practice a few times and learn to recognize the outputs of each command. It can be a bit daunting if you've never worked with a terminal environment before, but remember: _the man page is your friend_. Once you feel comfortable with the majority of the commands, move on to the next portion of this guide.
 
+## File and Directory Permissions
+
 ## Further Configuration
 
 ### VSCode
 
 VSCode is awesome. Simply put, it is the best IDE (Integrated Development Environment) around. If you've taken any sort of coding class in the past, you might have messed around with programs like Eclipse or NetBeans. Throw those out the window. Once you go to VSCode, you'll never go back.
 
-On your Linux machine, go to the [VSCode website](https://code.visualstudio.com/download) and download the `.deb` file. Change directories to your Downloads (`cd Downloads`) and use the `dpkg` command with the `-i` suffix to install VSCode (`dpkg -i PACKAGE_NAME`). To launch VSCode, simply switch to a directory with a project and type `code .` which will launch VSCode in the current directory.
+On your Linux machine, go to the terminal and type `sudo apt install code` which will install VSCode on your system.
 
-_Now that they have it installed, do we want to walk them through extensions?_
+To launch VSCode, simply switch to a directory with a project and type `code .` which will launch VSCode in the current directory.
 
-### Anaconda
+Once you open up VSCode, take a look at it for a minute. It looks just like Notepad, so why are you installing this? Well, the real power of VSCode is in the extensions. Bring up the Extensions tab by clicking the icon in the left bar of the program. You can search for extensions and download them here in this menu.
 
-Now that we've got a coding environment, let's install Anaconda. Wright State's native computer wizard Ryan Slater explains Anaconda pretty well:
+You can work wonders with extensions. For example, the extension TabNine will autocomplete lines of code based on machine learning. There are also a multitude of extensions that will truncate and optimize your code _without you having to do anything_. On top of that, there are extensions that will color up your code and make it look pretty. I would recommend browsing the extensions page and installing some that look interesting.
 
-> The big reason to use Anaconda over plain old boring Python is how Anaconda handles environments. Environments are basically virtual machines, but for Python. They have some version of Python installed, and some specified set of modules. They are completely separate and independent from your core Python installation, meaning you can easily spin up different combinations of modules and versions without affecting your host OS. This is great for testing your code on old versions of modules, trying beta features, or for setting up a module that might break some other module you use. Below are a list of useful commands. Check out the [documentation](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands) for more information.
-
-If you want more of that, check out Ryan's Python guide [here](https://github.com/cse-devteam/Programmers-Guide-to-the-Galaxy/blob/master/Getting-Started/python.md). Really, you should.
+To install an extension, simply click 'install' on the extension page.
 
 What else should we add here?
