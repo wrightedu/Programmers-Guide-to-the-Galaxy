@@ -62,6 +62,7 @@ In Linux, _it's all about the permissions_. Files, directories, you name it, the
 This means that only if you have the given permissions, will you then be able to manipulate a file or directory.
 
 Here's an example of an `ls -l` on an example directory:
+
 ```
 drwxr-xr-x 2 cpeters cpeters 4096 May 25 12:54 dir1
 -rw-r-x--- 1 cpeters cpeters    0 May 25 12:40 file1
@@ -71,7 +72,7 @@ drwxr-xr-x 2 cpeters cpeters 4096 May 25 12:54 dir1
 
 Notice here that there are three groups of 'rwx' meaning the first is the user, second is the group and the third is the other portions of the user base. Notice also that file1 can be read and written by the user, but only members of a specific group can execute th file. See also that the directory has a 'd' in front of the permissions to signifiy it is a directory.
 
-To learn more about file and directory permissions, click [this link](https://www.linux.com/training-tutorials/understanding-linux-file-permissions/) to go to the official Linux description on the topic. 
+To learn more about file and directory permissions, click [this link](https://www.linux.com/training-tutorials/understanding-linux-file-permissions/) to go to the official Linux description on the topic.
 
 ## Further Configuration
 
@@ -88,5 +89,3 @@ Once you open up VSCode, take a look at it for a minute. It looks just like Note
 You can work wonders with extensions. For example, the extension TabNine will autocomplete lines of code based on machine learning. There are also a multitude of extensions that will truncate and optimize your code _without you having to do anything_. On top of that, there are extensions that will color up your code and make it look pretty. I would recommend browsing the extensions page and installing some that look interesting.
 
 To install an extension, simply click 'install' on the extension page.
-
-What else should we add here?
