@@ -9,6 +9,8 @@
 > Linux is a family of open-source Unix-like operating systems based on the Linux kernel, an operating system kernel first released on September 17, 1991, by Linus Torvalds. Linux is typically packaged in a Linux distribution.
 > Popular Linux distributions include Debian, Fedora, and Ubuntu. Commercial distributions include Red Hat Enterprise Linux and SUSE Linux Enterprise Server. Desktop Linux distributions include a windowing system such as X11 or Wayland, and a desktop environment such as GNOME or KDE Plasma. Distributions intended for servers may omit graphics altogether, or include a solution stack such as LAMP. Because Linux is freely redistributable, anyone may create a distribution for any purpose. [Wikipedia](https://en.wikipedia.org/wiki/Linux)
 
+Linux is made up of A linux kernel and a set of unique programs around it. Difference may include a graphical interface, package manager, pre-installed software
+
 ## Getting Started
 
 Let's break down that tech-jargon Wikipedia article. Linux is actually NOT an OS. Linux is the kernel. Linux distributions are OSes. There's a famous copypasta about this:
@@ -21,7 +23,7 @@ Let's break down that tech-jargon Wikipedia article. Linux is actually NOT an OS
 
 Linux is open source, meaning that anyone (including you) can look at the source code and even modify it to fulfil your wildest dreams (Yes, really. People go nuts with this stuff. If you're interested, I would highly recommend checking out r/unixporn on Reddit). Linux is separated into "distributions" which are essentially just different OS versions with the only major difference being the package manager (the thing that manages packages... duh). Again, Linux distros aren't _technically_ Linux, however it's the norm just to call it that to make it easier. You can choose any Linux distribution, **however for purposes of learning, I would recommend installing Elementary OS,** which can be downloaded [here](https://elementary.io). Fair warning, this OS is a "pay what you want" meaning if you want it for free, enter $0 in the place to pay for the link.
 
-Again, any Linux distribution can be downloaded and installed for free on any machine that you would like. However, you don't have to have a dedicated computer just to run Linux. There are many other ways to enjoy the OS even from the comfort of your native Windows environment!
+Again, most Linux distribution can be downloaded and installed for free on any machine that you would like. However, you don't have to have a dedicated computer just to run Linux. There are many other ways to enjoy the OS even from the comfort of your native Windows environment!
 
 ### Linux for Windows? Say no more!
 
