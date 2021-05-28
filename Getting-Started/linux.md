@@ -13,17 +13,21 @@ Linux is made up of A linux kernel and a set of unique programs around it. Diffe
 
 ## Getting Started
 
-Let's break down that tech-jargon Wikipedia article. Linux is actually NOT an OS. Linux is the kernel. Linux distributions are OSes. There's a famous copypasta about this:
+Let's break down that tech-jargon Wikipedia article. Linux is an OS that is based on the Linux kernel.
 
-> What you’re referring to as Linux, is in fact, GNU/Linux, or as I’ve recently taken to calling it, GNU plus Linux. Linux is not an operating system unto itself, but rather another free component of a fully functioning GNU system made useful by the GNU corelibs, shell utilities and vital system components comprising a full OS as defined by POSIX.
+Linux is open source, meaning that anyone (including you) can look at the source code and even modify it to fulfill your wildest custom operating system dreams (check out r/unixporn on Reddit).
 
-> Many computer users run a modified version of the GNU system every day, without realizing it. Through a peculiar turn of events, the version of GNU which is widely used today is often called “Linux”, and many of its users are not aware that it is basically the GNU system, developed by the GNU Project. There really is a Linux, and these people are using it, but it is just a part of the system they use.
+Linux is separated into "distributions" which are essentially just different OS versions with the only major difference being extra software that gets included along with it like a package manager and graphical interface. You can choose any Linux distribution, **however for purposes of learning, I would recommend installing Elementary OS,** which can be downloaded [here](https://elementary.io). Fair warning, this OS is a "pay what you want" meaning if you want it for free, enter $0 in the place to pay for the link.
 
-> Linux is the kernel: the program in the system that allocates the machine’s resources to the other programs that you run. The kernel is an essential part of an operating system, but useless by itself; it can only function in the context of a complete operating system. Linux is normally used in combination with the GNU operating system: the whole system is basically GNU with Linux added, or GNU/Linux. All the so-called “Linux” distributions are really distributions of GNU/Linux.
+Again, *most* Linux distributions can be downloaded and installed for free on any machine (there are enterprise distributions that cost lots of money, but you probably won't be encountering those) that you would like. However, you don't have to have a dedicated computer just to run Linux. There are many other ways to enjoy the OS even from the comfort of your native Windows environment!
 
-Linux is open source, meaning that anyone (including you) can look at the source code and even modify it to fulfil your wildest dreams (Yes, really. People go nuts with this stuff. If you're interested, I would highly recommend checking out r/unixporn on Reddit). Linux is separated into "distributions" which are essentially just different OS versions with the only major difference being the package manager (the thing that manages packages... duh). Again, Linux distros aren't _technically_ Linux, however it's the norm just to call it that to make it easier. You can choose any Linux distribution, **however for purposes of learning, I would recommend installing Elementary OS,** which can be downloaded [here](https://elementary.io). Fair warning, this OS is a "pay what you want" meaning if you want it for free, enter $0 in the place to pay for the link.
+### But OK. Why Linux?
 
-Again, most Linux distribution can be downloaded and installed for free on any machine that you would like. However, you don't have to have a dedicated computer just to run Linux. There are many other ways to enjoy the OS even from the comfort of your native Windows environment!
+To be honest, I'm still grappling with that question myself. I have been a Windows/Mac user my whole life, why would I integrate to this OS where more things can go wrong and there's just generally more crap you have to deal with? Well, the answer lies where most things lie in Linux: the command line.
+
+If you haven't figured it out already, to use Linux fully, you generally use the command line every day. Generally, if you are a programmer or someone who works with the guts of computers, your job is interpreting and parsing text. Linux's job is the same: inputting text and outputting parsed text.
+
+The amount of extremely powerful customization that you can do just from a simple command on the Linux command line towers over anything you could do in the Windows PowerShell. Want to find all the instances of the word "banana" in a 1,000,000,000 line text file? Linux can do it in the snap of a finger. Made a slight variable naming error in a large program? Done. Want to do large user modification in a few seconds? Say less. It's things like this, that may not be flashy or even remotely sexy that separates Linux from the pack. Trust me, this isn't exactly easy to justify. But, as you use it more and realize just how *much* you can do with it, you will also realize why Linux has such a big market share and is the driving workhorse behind some of the world's most powerful systems.
 
 ### Linux for Windows? Say no more!
 
