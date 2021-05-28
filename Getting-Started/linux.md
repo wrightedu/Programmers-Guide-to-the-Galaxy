@@ -4,7 +4,7 @@
 
 ## Definition
 
-"Linux is a system designed _by_ developers _for_ developers." - [Dr. Travis Doom](https://people.wright.edu/travis.doom)
+"Linux is an operating system designed _by_ developers _for_ developers." - [Dr. Travis Doom](https://people.wright.edu/travis.doom)
 
 > Linux is a family of open-source Unix-like operating systems based on the Linux kernel, an operating system kernel first released on September 17, 1991, by Linus Torvalds. Linux is typically packaged in a Linux distribution.
 > Popular Linux distributions include Debian, Fedora, and Ubuntu. Commercial distributions include Red Hat Enterprise Linux and SUSE Linux Enterprise Server. Desktop Linux distributions include a windowing system such as X11 or Wayland, and a desktop environment such as GNOME or KDE Plasma. Distributions intended for servers may omit graphics altogether, or include a solution stack such as LAMP. Because Linux is freely redistributable, anyone may create a distribution for any purpose. [Wikipedia](https://en.wikipedia.org/wiki/Linux)
@@ -19,15 +19,21 @@ Linux is open source, meaning that anyone (including you) can look at the source
 
 Linux is separated into "distributions" which are essentially just different OS versions with the only major difference being extra software that gets included along with it like a package manager and graphical interface. You can choose any Linux distribution, **however for purposes of learning, I would recommend installing Elementary OS,** which can be downloaded [here](https://elementary.io). Fair warning, this OS is a "pay what you want" meaning if you want it for free, enter $0 in the place to pay for the link.
 
-Again, *most* Linux distributions can be downloaded and installed for free on any machine (there are enterprise distributions that cost lots of money, but you probably won't be encountering those) that you would like. However, you don't have to have a dedicated computer just to run Linux. There are many other ways to enjoy the OS even from the comfort of your native Windows environment!
+Again, _most_ Linux distributions can be downloaded and installed for free on any machine (there are enterprise distributions that cost lots of money, but you probably won't be encountering those) that you would like. However, you don't have to have a dedicated computer just to run Linux. There are many other ways to enjoy the OS even from the comfort of your native Windows environment!
 
 ### But OK. Why Linux?
 
-To be honest, I'm still grappling with that question myself. I have been a Windows/Mac user my whole life, why would I integrate to this OS where more things can go wrong and there's just generally more crap you have to deal with? Well, the answer lies where most things lie in Linux: the command line.
+To be honest, I'm still grappling with that question myself. I have been a Windows/Mac user my whole life, why would I switch to this OS where more things can go wrong and there's just generally more crap you have to deal with? Well, the answer lies where most things lie in Linux: the command line.
 
 If you haven't figured it out already, to use Linux fully, you generally use the command line every day. Generally, if you are a programmer or someone who works with the guts of computers, your job is interpreting and parsing text. Linux's job is the same: inputting text and outputting parsed text.
 
-The amount of extremely powerful customization that you can do just from a simple command on the Linux command line towers over anything you could do in the Windows PowerShell. Want to find all the instances of the word "banana" in a 1,000,000,000 line text file? Linux can do it in the snap of a finger. Made a slight variable naming error in a large program? Done. Want to do large user modification in a few seconds? Say less. It's things like this, that may not be flashy or even remotely sexy that separates Linux from the pack. Trust me, this isn't exactly easy to justify. But, as you use it more and realize just how *much* you can do with it, you will also realize why Linux has such a big market share and is the driving workhorse behind some of the world's most powerful systems.
+The amount of extremely powerful customization that you can do just from a simple command on the Linux command line towers over anything you could do in the Windows PowerShell. Want to find all the instances of the word "banana" in a 1,000,000,000 line text file? Linux can do it in the snap of a finger. Made a slight variable naming error in a large program? Done. Want to do large user modification in a few seconds? Say less. It's things like this, that may not be flashy or even remotely sexy that separates Linux from the pack. Trust me, this isn't exactly easy to justify. But, as you use it more and realize just how _much_ you can do with it, you will also realize why Linux has such a big market share and is the driving workhorse behind some of the world's most powerful systems. Take a look at this diagram if you think I'm wrong:
+
+![image](linux_market_share.png)
+
+Ok great. Linux can do complex commands fast. I still don't see a reason why I should make the switch?
+
+Well, one of the biggest reasons to use Linux is relating back to Dr. Doom's quote: Linux is an operating system designe by developers for developers. Linux is designed for development. You aren't going to write an OS on MacOS, simple as that. (add more here)
 
 ### Linux for Windows? Say no more!
 
