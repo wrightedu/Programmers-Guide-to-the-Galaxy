@@ -27,13 +27,17 @@ To be honest, I'm still grappling with that question myself. I have been a Windo
 
 If you haven't figured it out already, to use Linux fully, you generally use the command line every day. Generally, if you are a programmer or someone who works with the guts of computers, your job is interpreting and parsing text. Linux's job is the same: inputting text and outputting parsed text.
 
-The amount of extremely powerful customization that you can do just from a simple command on the Linux command line towers over anything you could do in the Windows PowerShell. Want to find all the instances of the word "banana" in a 1,000,000,000 line text file? Linux can do it in the snap of a finger. Made a slight variable naming error in a large program? Done. Want to do large user modification in a few seconds? Say less. It's things like this, that may not be flashy or even remotely sexy that separates Linux from the pack. Trust me, this isn't exactly easy to justify. But, as you use it more and realize just how _much_ you can do with it, you will also realize why Linux has such a big market share and is the driving workhorse behind some of the world's most powerful systems. Take a look at this diagram if you think I'm wrong:
+The amount of extremely powerful customization that you can do just from a simple command on the Linux command line towers over anything you could do in the Windows PowerShell. Want to find all the instances of the word "banana" in a 1,000,000,000 line text file? Linux can do it in the snap of a finger. Made a slight variable naming error in a large program? Done. Want to do large user modification in a few seconds? Say less. It's things like this, that may not be flashy or even remotely sexy that separates Linux from the pack. Trust me, this isn't exactly easy to justify. But, as you use it more and realize just how _much_ you can do with it, you will also realize why Linux has such a big market share and is the driving workhorse behind some of the world's most powerful systems. Linux is the primary operating sytem for large-scale computing. Take a look at this diagram if you think I'm wrong:
 
 ![image](linux_market_share.png)
 
 Ok great. Linux can do complex commands fast. I still don't see a reason why I should make the switch?
 
-Well, one of the biggest reasons to use Linux is relating back to Dr. Doom's quote: Linux is an operating system designe by developers for developers. Linux is designed for development. You aren't going to write an OS on MacOS, simple as that. (add more here)
+Well, one of the biggest reasons to use Linux is relating back to Dr. Doom's quote: Linux is an operating system designe by developers for developers. Linux is designed for development. You aren't going to write an Operating system on MacOS, simple as that.
+
+In Linux, you can get to the nitty gritty stuff faster than in other more bloaty operating systems. You can control your development environment to such a fine degree that you can work with almost limitless different combinations of dependencies and modules. In Linux, things just *work*. 
+
+
 
 ### Linux for Windows? Say no more!
 
