@@ -4,9 +4,9 @@
 
 ## What is git?
 
-Something that is all too common with us nerds who work with computers is that we make mistakes. _A LOT_. In fact, it wouldn't be too far off to define working with software "a constant evolving problem that never goes away". However, when you solve that problem, it is all the more sweet.
+Something that is all too common with us nerds who work with computers is that we make mistakes. _A LOT_. In fact, it wouldn't be too far off to define working with software "a constant evolving problem that never goes away". However, when you solve that problem, it's all the more sweet.
 
-But when you're working with code that is also constantly evolving and changing, it is important to keep track of your work. Everyone has been working on a coding project, added a function and then had everything break. I know I've been there. When that happened, I would have killed to have something that would have kept track of my routine "backups" of my code. Enter git.
+But when you're working with code that is also constantly evolving and changing, it's important to keep track of your work. Everyone has been working on a coding project, added a function and then had everything break. I know I've been there. When that happened, I would have killed to have something that would have kept track of my routine "backups" of my code. Enter git.
 
 As we have referenced a lot in this guide, let's see what Dr. Wikipedia has to say:
 
@@ -70,9 +70,9 @@ This is the opposite of pushing. When someone has made a change to a remote bran
 
 BIG HUMONGUS NOTE: `git pull` and A PULL REQUEST are two different things! Yes, I made this mistake when I first started out so it's ok.
 
-### A Pull request
+### A Pull Request
 
-I am pulling a pull request look at me weeeeeeeeee!
+So you've been hard at work on a branch of code, and now you think that your version of the code should be worked into the main working branch. In this situation, you would open a Pull Request in GitHub. This essentially requests the owners of the master branch to "pull" your changes into the master branch. In the pull request dialog box, state your changes and mention how your code is stable and should be worked into the main version.
 
 ### Branching
 
@@ -115,7 +115,15 @@ GitHub lets you track your changes and commits, and also lets you comment, compl
 
 ### Assigning Teams
 
+One of GitHub's fancy functions is to add members of a team to work on a project. You can assign people by simply clicking on the "Assignees" button in GH. You can assign people to projects, issues and more simply by clicking.
+
 ### Commit history
+
+You can view your commit history in a nice GUI on GitHub. You can view your commit history by clicking the "commits" button in the repo.
+
+![image](commitPic.png)
+
+### Project Board
 
 ## An Example Workflow
 
