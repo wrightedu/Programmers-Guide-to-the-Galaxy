@@ -9,7 +9,7 @@
 > Linux is a family of open-source Unix-like operating systems based on the Linux kernel, an operating system kernel first released on September 17, 1991, by Linus Torvalds. Linux is typically packaged in a Linux distribution.
 > Popular Linux distributions include Debian, Fedora, and Ubuntu. Commercial distributions include Red Hat Enterprise Linux and SUSE Linux Enterprise Server. Desktop Linux distributions include a windowing system such as X11 or Wayland, and a desktop environment such as GNOME or KDE Plasma. Distributions intended for servers may omit graphics altogether, or include a solution stack such as LAMP. Because Linux is freely redistributable, anyone may create a distribution for any purpose. [Wikipedia](https://en.wikipedia.org/wiki/Linux)
 
-Linux is made up of A linux kernel and a set of unique programs around it. Difference may include a graphical interface, package manager, pre-installed software
+Linux is made up of a linux kernel and a set of unique programs around it. Differences may include a graphical interface, package manager, and pre-installed software among other things.
 
 ## Getting Started
 
@@ -20,7 +20,6 @@ Linux is open source, meaning that anyone (including you) can look at the source
 Linux is separated into "distributions" which are essentially just different OS versions with the only major difference being extra software that gets included along with it like a package manager and graphical interface. You can choose any Linux distribution, **however for purposes of learning, I would recommend installing Elementary OS,** which can be downloaded [here](https://elementary.io). Fair warning, this OS is a "pay what you want" meaning if you want it for free, enter $0 in the place to pay for the link.
 
 Again, _most_ Linux distributions can be downloaded and installed for free on any machine (there are enterprise distributions that cost lots of money, but you probably won't be encountering those) that you would like. However, you don't have to have a dedicated computer just to run Linux. There are many other ways to enjoy the OS even from the comfort of your native Windows environment!
-
 
 ### But OK. Why Linux?
 
