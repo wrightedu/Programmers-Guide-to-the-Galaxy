@@ -27,8 +27,6 @@ My working draft:
 
 # Linux: _THE_ Operating System
 
----
-
 ~ _Christian Peters_
 
 ## Definition
