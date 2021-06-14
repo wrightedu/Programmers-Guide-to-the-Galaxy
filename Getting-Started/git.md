@@ -131,15 +131,15 @@ If you're stuck, GitHub provides issue [templates](https://docs.github.com/en/co
 
 One of GitHub's fancy functions is to add members of a team to work on a project. You can assign people by simply clicking on the "Assignees" button in GH. You can assign people to projects, issues and more simply by clicking.
 
-### Commit history
+### Commit History
 
-You can view your commit history in a nice GUI on GitHub. You can view your commit history by clicking the "commits" button in the repo.
+You can view your commit history in a nice GUI on GitHub. You can view your commit history by clicking the "commits" button in the repo. Each commit is denoted by a series of letters and numbers, which you can specifically revert back to. Check out [this link](https://stackoverflow.com/questions/3639115/reverting-to-a-specific-commit-based-on-commit-id-with-git) on Stack Overflow for more information on how to do that.
 
-![image](commitPic.png)
+### Project Boards
 
-### Project Board
+Project boards on GitHub help you organize and prioritize your work. You can create project boards for specific feature work, comprehensive roadmaps, or even release checklists. With project boards, you have the flexibility to create customized workflows that suit your needs. Here is an example of a project board with some custom status sections:
 
-Project boards on GitHub help you organize and prioritize your work. You can create project boards for specific feature work, comprehensive roadmaps, or even release checklists. With project boards, you have the flexibility to create customized workflows that suit your needs.
+![image](gitHub_projectboard.png)
 
 ## An Example Workflow
 
