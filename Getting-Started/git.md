@@ -12,7 +12,7 @@ As we have referenced a lot in this guide, let's see what Dr. Wikipedia has to s
 
 > Git is software for tracking changes in any set of files, usually used for coordinating work among programmers collaboratively developing source code. ([Wikipedia](https://en.wikipedia.org/wiki/Git))
 
-Basically, to boil down the boiled down version of git, it is a complex remote integrated system restore. If you've ever used Windows, you know that making a system restore point enables your computer to completely revert back to that certain point when something bad happened. You downloaded a virus from a Minecraft mod website, but never fear, Windows made a restore point to save your computer and act like that malicious software never existed. This is the same concept that is applied to git, but with code.
+Basically, to boil down the boiled down version of git, it is a version-control system that keeps track of changes to files. You then can use this to coordinate and collaborate between multiple people.
 
 ## Breaking it down
 
@@ -111,7 +111,21 @@ GitHub is the largest host of source code on the globe. If it's open source, it'
 
 GitHub lets you track your changes and commits, and also lets you comment, complain and praise anything you want through the interface. You can highlight issues, bring up complaints, start checklists, organize to-do lists, and so much more. To avoid a 30 page discussion on GitHub, lets jump into what WE use it for.
 
-### Tracking Issues
+### Managing Issues
+
+So say you're reviewing you coworker's code and you see an issue. Something doesn't look right and you think there's a better way of writing a section of code. Instead of going to them in person or writing an email that will ultimately get lost, you open an issue, which is conviniently handled through GitHub.
+
+In the "Issues" tab of GitHub, you can click the green "New Issues" button. You then will title your issue and write a brief description of what you think is wrong and how to fix it.
+
+However, before you click "Submit new issue" keep a few things in mind:
+
+- Make sure your issue covers one _specific_ thing. Even if that one thing is a general concept, keep your issue to one concept at a time.
+  - Examples:
+    - Bad Issue: "Main function isn't documented and toString() function doesn't work properly" (separate these into two issues)
+    - Good Issue: "Main function doesn't have proper documentation"
+- Provide enough details to give the author the tools to fix the issue to the best of their abilities. If it's a bug in the code, provide steps on how to reproduce the bug.
+
+If you're stuck, GitHub provides issue [templates](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/about-issue-and-pull-request-templates) that you can use based on the specific issue. But if you just keep the above steps in mind, you should be golden.
 
 ### Assigning Teams
 
@@ -124,6 +138,8 @@ You can view your commit history in a nice GUI on GitHub. You can view your comm
 ![image](commitPic.png)
 
 ### Project Board
+
+Project boards on GitHub help you organize and prioritize your work. You can create project boards for specific feature work, comprehensive roadmaps, or even release checklists. With project boards, you have the flexibility to create customized workflows that suit your needs.
 
 ## An Example Workflow
 
