@@ -4,15 +4,15 @@
 
 ## What is git?
 
-Something that is all too common with us nerds who work with computers is that we make mistakes. _A LOT_. In fact, it wouldn't be too far off to define working with software "a constant evolving problem that never goes away". However, when you solve that problem, it's all the more sweet.
+Something that is all too common with us nerds who work with computers is that we make mistakes. _A LOT_. In fact, it wouldn't be too far off to define working with software "a constant evolving problem that never goes away". However, it's because of these problems that we are able to get better, and ultimately solve them for good.
 
-But when you're working with code that is also constantly evolving and changing, it's important to keep track of your work. Everyone has been working on a coding project, added a function and then had everything break. I know I've been there. When that happened, I would have killed to have something that would have kept track of my routine "backups" of my code. Enter git.
+But when you're working with code that is also constantly evolving and changing, it's important to keep track of your work. Everyone has been working on a coding project, added a function and then had everything break. I know I've been there. When that happened, I would have loved to have somethingto keep  track of my routine "backups" of my code. Enter git.
 
 As we have referenced a lot in this guide, let's see what Dr. Wikipedia has to say:
 
 > Git is software for tracking changes in any set of files, usually used for coordinating work among programmers collaboratively developing source code. ([Wikipedia](https://en.wikipedia.org/wiki/Git))
 
-Basically, to boil down the boiled down version of git, it is a version-control system that keeps track of changes to files. You then can use this to coordinate and collaborate between multiple people.
+Basically, to boil down the boiled down version of git, it is a version-control system that keeps track of changes to files. You then can use this to coordinate and collaborate between multiple people in multiple workflows.
 
 ## Breaking it down
 
@@ -139,7 +139,7 @@ You can view your commit history in a nice GUI on GitHub. You can view your comm
 
 Project boards on GitHub help you organize and prioritize your work. You can create project boards for specific feature work, comprehensive roadmaps, or even release checklists. With project boards, you have the flexibility to create customized workflows that suit your needs. Here is an example of a project board with some custom status sections:
 
-![image](gitHub_projectboard.png)
+![image](images/gitHub_projectboard.png)
 
 ## An Example Workflow
 

@@ -29,7 +29,7 @@ If you haven't figured it out already, to use Linux fully, you generally use the
 
 The amount of extremely powerful customization that you can do just from a simple command on the Linux command line towers over anything you could do in the Windows PowerShell. Want to find all the instances of the word "banana" in a 1,000,000,000 line text file? Linux can do it in the snap of a finger. Made a slight variable naming error in a large program? Done. Want to do large user modification in a few seconds? Say less. It's things like this, that may not be flashy or even remotely sexy that separates Linux from the pack. Trust me, this isn't exactly easy to justify. But, as you use it more and realize just how _much_ you can do with it, you will also realize why Linux has such a big market share and is the driving workhorse behind some of the world's most powerful systems. Linux is the primary operating sytem for large-scale computing. Albeit, Windows still dominates the desktop computer market, but Linux takes the cake when it comes to servers. Take a look at this diagram for server computers if you think I'm wrong:
 
-![image](linux_market_share.png)
+![image](images/linux_market_share.png)
 
 Fun fact: Windows is developed and compiled on Linux machines!
 
