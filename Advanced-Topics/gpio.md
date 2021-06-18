@@ -3,17 +3,18 @@
 
 ### What is it?
 The GPIO Board is a structure that you probably don't see on many computers. GPIO Pins are General Purpose Input Output Pins, which are physically available to you as hardwareon devices that have them. For isntance, a Raspberry PI has one!
-![](https://www.raspberrypi.org/documentation/usage/gpio/images/GPIO-Pinout-Diagram-2.png)
+![](https://osoyoo.com/wp-content/uploads/2017/06/Raspberry-GPIO-Pins_B_plus-1.jpg)
 
 There are a lot of pins which might make finding device-specific documentation a requirement.
 
 Just some of the highlights for what you can access with the PI example from above:
 * 3 and 5 Volt Output
-* HIGH and LOW Voltage Input
-* Pulse-Width Modulation Input
+* HIGH and LOW Voltage Input Pins
+* Pulse-Width Modulation Pins
 * I2C Data and Clock
 * Serial Pins
 * Serial Peripheral Interface
+* EEPROM
 
 ### So what?
 What do you mean so what?
