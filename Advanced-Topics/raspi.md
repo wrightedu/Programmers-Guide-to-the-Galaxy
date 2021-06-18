@@ -40,3 +40,6 @@ Well, its basically a full blown computer and runs Linux. There are a ton of pro
 
 If you don't know how cool GPIO Pins are, you should read the GPIO guide!
 
+### Useful Links
+* https://www.raspberrypi.org/
+

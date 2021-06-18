@@ -9,13 +9,19 @@ The GPIO Board is a structure that you probably don't see on many computers. GPI
 There are a lot of pins which might make finding device-specific documentation a requirement.
 
 Just some of the highlights for what you can access with the PI example from above:
-* 3 and 5 Volt Output
-* HIGH and LOW Voltage Input Pins
-* Pulse-Width Modulation Pins
-* I2C Data and Clock
-* Serial Pins
-* Serial Peripheral Interface
-* EEPROM
+- 3 and 5 Volt Output
+	- Let's you power another device with this pin.
+- HIGH and LOW Voltage Input Pins
+	- Outputs essentially an ON or OFF signal from this pin.
+	- You can have code that literally checks if there is a current of electricity going to this pin.
+- Pulse-Width Modulation Pins
+	- Send more complicated packets of information via an electrical signal.
+	- Much like the HIGH and LOW Pins, but cooler.
+- I2C Data and Clock
+	- Want to synchronize and control a motor? These let you.
+	- Are also Serial Pins.
+- Serial Pins
+	- Allow synhronized communication between devices.
 
 ### So what?
 What do you mean so what?
