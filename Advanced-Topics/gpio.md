@@ -12,7 +12,7 @@ Just some of the highlights for what you can access with the PI example from abo
 - 3 and 5 Volt Output
 	- Let's you power another device with this pin.
 - HIGH and LOW Voltage Input Pins
-	- Outputs essentially an ON or OFF signal from this pin.
+	- Look for essentially an ON or OFF signal from this pin.
 	- You can have code that literally checks if there is a current of electricity going to this pin.
 - Pulse-Width Modulation Pins
 	- Send more complicated packets of information via an electrical signal.
