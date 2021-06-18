@@ -3,7 +3,7 @@
 
 ### What is it?
 The GPIO Board is a structure that you probably don't see on many computers. GPIO Pins are General Purpose Input Output Pins, which are physically available to you as hardwareon devices that have them. For isntance, a Raspberry PI has one!
-![](https://osoyoo.com/wp-content/uploads/2017/06/Raspberry-GPIO-Pins_B_plus-1.jpg)
+![](rsc/GPIO-Pinout-Diagram-2.png)
 
 There are a lot of pins which might make finding device-specific documentation a requirement.
 
