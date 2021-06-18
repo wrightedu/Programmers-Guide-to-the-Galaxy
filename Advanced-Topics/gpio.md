@@ -1,4 +1,4 @@
-# GPIO Board
+# GPIO Pins
 #### Can't believe it isn't USB
 
 ### What is it?
@@ -20,8 +20,8 @@ Just some of the highlights for what you can access with the PI example from abo
 ### So what?
 What do you mean so what?
 
-The GPIO Board gives you the ability to input / output data as a physical electric current to / from the device. This means gadgets like temperature sensors and motors can be attached directly and operated. Additionally, more advanced microelectronics like an Arduino can be attached. If you wanted to get real tricky, you can even attach other devices with GPIO Boards!
+A GPIO Pin gives you the ability to input / output data as a physical electric current to / from the device. This means gadgets like temperature sensors and motors can be attached directly and operated. Additionally, more advanced microelectronics like an Arduino can be attached. If you wanted to get real tricky, you can even attach other devices with GPIO Boards!
 
 ### Where do you go from here?
-*shrug*
+GPIO Pins use requires some more knowledge. If you are not comfortable with a Raspberry Pi and / or an Arduino (guide coming for those soon), those should be your next steps. Additionally, you better be comfortable with playing around with circuits and prototyping.
 
