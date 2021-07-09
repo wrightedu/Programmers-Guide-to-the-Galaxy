@@ -163,3 +163,7 @@ _Do a little work, pick your nose, whatever_
 _Do more work, commits and stuff, and then after I have made my final commit of the day_
 
 - `git push`: Pushes my changes to the remote branch, and I'm done for the day
+
+Again, this is just an example of what commands I would use when I'm starting work for the day. Obviously, you can change them around. However, what's important here is the concept of working in branches. A key idea of working here is that every piece of work should be looked over by another set of eyes before being approved and becoming the working copy. Even during the construction of this guide itself, it had to be looked at by another member of the team before it was pushed to public. Think of it as being a contributing writer to a newspaper - you're never the only person on a project.
+
+
