@@ -1,4 +1,4 @@
-# PGG's Git Crash Course: How to 'git' good
+# WSU CSE's Git Crash Course: How to 'git' good
 
 ~Christian Peters
 
@@ -117,7 +117,7 @@ GitHub lets you track your changes and commits, and also lets you comment, compl
 
 ### Managing Issues
 
-So say you're reviewing you coworker's code and you see an issue. Something doesn't look right and you think there's a better way of writing a section of code. Instead of going to them in person or writing an email that will ultimately get lost, you open an issue, which is conviniently handled through GitHub.
+So say you're reviewing you coworker's code and you see a problem. Something doesn't look right and you think there's a better way of writing a section of code. Instead of going to them in person or writing an email that will ultimately get lost, you open an issue, which is conviniently handled through GitHub.
 
 In the "Issues" tab of GitHub, you can click the green "New Issues" button. You then will title your issue and write a brief description of what you think is wrong and how to fix it.
 
@@ -133,11 +133,13 @@ If you're stuck, GitHub provides issue [templates](https://docs.github.com/en/co
 
 ### Assigning Teams
 
-One of GitHub's fancy functions is to add members of a team to work on a project. You can assign people by simply clicking on the "Assignees" button in GH. You can assign people to projects, issues and more simply by clicking.
+One of GitHub's fancy functions is to add members of a team to work on a project. You can assign people by simply clicking on the "Assignees" button in GH. You can assign people to projects, issues and more simply by clicking. In this job, you'll be working in a programming team on GitHub. You'll be able to see all of the team projects, and contribute to the ones you're assigned to.
 
 ### Commit History
 
 You can view your commit history in a nice GUI on GitHub. You can view your commit history by clicking the "commits" button in the repo. Each commit is denoted by a series of letters and numbers, which you can specifically revert back to. Check out [this link](https://stackoverflow.com/questions/3639115/reverting-to-a-specific-commit-based-on-commit-id-with-git) on Stack Overflow for more information on how to do that.
+
+![image](images/commitHistoryPic.png)
 
 ### Project Boards
 
@@ -153,7 +155,7 @@ Say I just sat down to my desk in the morning and I want to start working on a p
 - Change directories to the repo
 - `git pull`: Updates the repo to any more changes that may have been made
 
-_Do a little work, pick your nose, whatever_
+_Do a little work, get some lunch, whatever_
 
 - `git status`: Seeing what files I modified and what I need to add to my staging area
 - `git add [FILENAME]`: Adds the "untracked" files to my staging areas
@@ -164,6 +166,14 @@ _Do more work, commits and stuff, and then after I have made my final commit of 
 
 - `git push`: Pushes my changes to the remote branch, and I'm done for the day
 
+A quick note: notice how I'm always typing `git status` to get the status of my current git project. This is VERY useful and should be a habit you should form whenever working with git. Whenever you type a `git status` you get not only the branch you're working on, but the files that you're modifying. This will help prevent against editing the wrong branches, and catching conflicting edits before they become too complex.
+
 Again, this is just an example of what commands I would use when I'm starting work for the day. Obviously, you can change them around. However, what's important here is the concept of working in branches. A key idea of working here is that every piece of work should be looked over by another set of eyes before being approved and becoming the working copy. Even during the construction of this guide itself, it had to be looked at by another member of the team before it was pushed to public. Think of it as being a contributing writer to a newspaper - you're never the only person on a project.
 
+## Some Closing Thoughts
 
+You'll mess up git your first time, your second time and your third time. It's a hard process to get used to doing but after a while it becomes second nature. Git being a version control service, it's used practically everywhere in the software development world. Get used to git and your future programming self will thank you later.
+
+If anything arises, don't be afraid to ask for help. Google can only go so far and your co-workers would be more than happy to give you guidance on how we specifically use git and GitHub. I had to ask for a lot of help when writing this, so it's nothing to be afraid of.
+
+Other than that, happy git-ing!
