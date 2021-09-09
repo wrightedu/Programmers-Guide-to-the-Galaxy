@@ -33,6 +33,8 @@ tab by default shows all open issues with the project. And issue is a task, bug,
 enhancement, or other thread of communication on a specific tracked topic. Through issues
 and their associated comments we can communicate on what we are currently tackling.
 
+Just a quick note on issues, not all issues in this repo refer to developments in this repo. We use this repo as a sort of dumping ground for all issues that aren't bound to a specific project, since CSE Support does much more than just development.
+
 [Projects](https://github.com/cse-devteam/Programmers-Guide-to-the-Galaxy/projects) are github
 organizational tools that help you order and priortize work. Most issues are immediately pushed
 into the default project board in a repository for assignment to a developer.
