@@ -1,6 +1,10 @@
 # Folders            #
 ######################
-__pycache__/
+*__pycache__/
+corgis/
+dogs/
+.vscode/
+
 
 # Logs and databases #
 ######################
