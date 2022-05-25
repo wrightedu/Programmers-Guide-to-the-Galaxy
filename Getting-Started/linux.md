@@ -17,9 +17,9 @@ Let's break down that tech-jargon Wikipedia article. Linux is an OS that is base
 
 Linux is open source, meaning that anyone (including you) can look at the source code and even modify it to fulfill your wildest custom operating system dreams (check out r/unixporn on Reddit).
 
-Linux is separated into "distributions" which are essentially just different OS versions with the only major difference being extra software that gets included along with it like a package manager and graphical interface. You can choose any Linux distribution, **however for purposes of learning, I would recommend installing Elementary OS,** which can be downloaded [here](https://elementary.io). Fair warning, this OS is a "pay what you want" meaning if you want it for free, enter $0 in the place to pay for the link.
+Linux is separated into "distributions" which are essentially just different OS versions. The only major difference between these distributions is the extra software that gets included along with it, like a package manager and graphical interface. You can choose any Linux distribution, **however for purposes of learning, I would recommend installing Elementary OS,** which can be downloaded [here](https://elementary.io) (don't worry, I'll get to how to install the OS so just pocket that link for later). Fair warning, this OS is a "pay what you want" meaning if you want it for free, enter $0 in the place to pay for the link.
 
-Again, _most_ Linux distributions can be downloaded and installed for free on any machine (there are enterprise distributions that cost lots of money, but you probably won't be encountering those) that you would like. However, you don't have to have a dedicated computer just to run Linux. There are many other ways to enjoy the OS even from the comfort of your native Windows environment!
+Again, _most_ Linux distributions can be downloaded and installed for free on any machine (there are enterprise distributions that cost lots of money, but you probably won't be encountering those). However, you don't have to have a dedicated computer just to run Linux. Stay with me for a few more paragraphs and I'll teach you how you can get Linux up and running on your home system.
 
 ### But OK. Why Linux?
 
@@ -29,7 +29,11 @@ If you haven't figured it out already, to use Linux fully, you generally use the
 
 The amount of extremely powerful customization that you can do just from a simple command on the Linux command line towers over anything you could do in the Windows PowerShell. Want to find all the instances of the word "banana" in a 1,000,000,000 line text file? Linux can do it in the snap of a finger. Made a slight variable naming error in a large program? Done. Want to do large user modification in a few seconds? Say less. It's things like this, that may not be flashy or even remotely sexy that separates Linux from the pack. Trust me, this isn't exactly easy to justify. But, as you use it more and realize just how _much_ you can do with it, you will also realize why Linux has such a big market share and is the driving workhorse behind some of the world's most powerful systems. Linux is the primary operating sytem for large-scale computing. Albeit, Windows still dominates the desktop computer market, but Linux takes the cake when it comes to servers. Take a look at this diagram for server computers if you think I'm wrong:
 
+<<<<<<< HEAD
 ![image](images/linux_market_share.png)
+=======
+![image](linux_market_share.png)
+>>>>>>> master
 
 Fun fact: Windows is developed and compiled on Linux machines!
 
@@ -45,11 +49,11 @@ There are several ways to enjoy Linux, but if you're using Windows (which honest
 
 #### Windows Subsystem for Linux (WSL)
 
-Believe it or not, Windows has a feature that lets you use Linux INSIDE of Windows! Crazy right? Dr Wikipedia explains it like this:
+Believe it or not, Windows has a feature that lets you use Linux INSIDE of Windows! Crazy right? Dr. Wikipedia explains it like this:
 
 > Windows Subsystem for Linux (WSL) is a compatibility layer for running Linux binary executables (in ELF format) natively on Windows 10 and Windows Server 2019. ... Since June 2019, WSL 2 is available to Windows 10 customers through the Windows Insider program, including the Home edition. [Wikipedia](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux)
 
-It essentially gives you the ability to play around with Linux commands in your own Windows environment. If you just want to dip your toes in the theoretical Linux lake, take a look at [this guide](https://www.wikihow.com/Enable-the-Windows-Subsystem-for-Linux) to enable WSL for your local Windows machine.
+It essentially gives you the ability to play around with Linux commands in your own Windows environment. If you just want to dip your toes in the theoretical Linux ocean, take a look at [this guide](https://www.wikihow.com/Enable-the-Windows-Subsystem-for-Linux) to enable WSL for your local Windows machine.
 
 #### Spinning up a Linux Virtual Machine
 
@@ -59,7 +63,7 @@ Once you have VirtualBox installed, you are now ready to download a VM and get s
 
 ### What if I'm on a Mac?
 
-Fun fact: MacOS is _Unix-based_. No, this isn't some term from the Matrix, this means that MacOS is built off of the core operating system family called Unix. Linux is also built off of Unix, meaning that most Linux commands work on a Mac system because they are _Unix-like_ meaning that any Unix-based OS should be able to run any other Unix-based OS commands. Ever opened up a terminal on your Mac? Chances are, you haven't. Well, change that. Do a spotlight search and open up a terminal. Test out some of the commands in the guide linked above and observe what they do. NOTE: You are working in your actual native file system and can actually mess up real files if you make the wrong commands (for example, I wouldn't run `rm -r *` in a directory because it deletes the entirety of it). Keep in mind that Mac is NOT Linux, but some of the commands have the same effect. If you want to mess with Linux more, I would recommend installing a VM through VirtualBox.
+Fun fact: MacOS is _Unix-based_. No, this isn't some term from the Matrix, this means that MacOS is built off of the core operating system family called Unix. Linux is also built off of Unix, meaning that most Linux commands work on a Mac system because they are _Unix-like_ meaning that any Unix-based OS should be able to run any other Unix-based OS commands. Ever opened up a terminal on your Mac? Chances are, you haven't. Well, change that. Do a spotlight search and open up a terminal. Test out some of the commands in the guide linked below and observe what they do. NOTE: You are working in your actual native file system and can mess up real files if you make the wrong commands (for example, I wouldn't run `rm -r *` in a directory because it deletes the entirety of it). Keep in mind that Mac is NOT Linux, but some of the commands have the same effect. If you want to mess with Linux more, I would recommend installing a VM through VirtualBox.
 
 ### What if I'm using Linux already?
 
@@ -73,9 +77,7 @@ The web has thousands of Linux guides that can teach you everything you need to 
 
 ## File and Directory Permissions
 
-In Linux, _it's all about the permissions_. Files, directories, you name it, they all have permissions on who can read, write or execute a given entity. For a given file, there are three groups that have a varying configuration of these permission levels: owner, group and all users.
-
-This means that only if you have the given permissions, will you then be able to manipulate a file or directory.
+In Linux, _it's all about the permissions_. Files, directories, you name it, they all have permissions on who can read, write or execute a given entity. For a given file, there are three groups that have a varying configuration of these permission levels: owner, group and all users. This means that you can't manipulate a given file or directory unless you have permission.
 
 Here's an example of an `ls -l` on an example directory:
 
@@ -91,6 +93,8 @@ Notice here that there are three groups of 'rwx' meaning the first is the user, 
 To learn more about file and directory permissions, click [this link](https://www.linux.com/training-tutorials/understanding-linux-file-permissions/) to go to the official Linux description on the topic.
 
 ## Further Configuration
+
+Now you've become familiar with some Linux commands and are on your way to becoming a command line genius. It's now time to add some other cool stuff to your Linux environment.
 
 ### VSCode
 
