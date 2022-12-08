@@ -9,7 +9,7 @@
   * [Installing Singularity](README.md#installing-singularity)
   * [Quick install shortcut](https://docs.sylabs.io/guides/3.10/user-guide/quick_start.html#quick-installation-steps)
   * [Building a container](README.md#building-containers)
-
+  * [Using containers with GPU (the `-nv` option)](README.md#nvidia-gpu-support)
 
 ## Overview and resources
 
@@ -132,5 +132,47 @@ sudo singularity build --sandbox /home/mkijowski/ubuntu-container/ docker://ubun
 sudo singularity build ubuntu.sif /home/mkijowski/ubuntu-container/
 ## Converts a previoulsy created sandbox container to a static .sif containter
 ```
+#### Using and editing containers with `singularity shell` 
+
+The `sudo singularity shell --writable /my/container/directory/` launches a shell inside the container from which we can continue our software installation and testing.  Note: the `--writable` flag requires sudo priveleges, without `--writable` the container would be read only (even though it is a `--sandbox` container.
+
+Once you are finished installing and testing your software, do not forget to convert your `--sandbox` container back to a `.simg` with 
+`sudo singularity build my-container.simg /my/container/directory/`
+
+#### Advacned Singularity topics
+
+##### [Singularity definition file](### Using and editing containers with `singularity shell` 
+The `sudo singularity shell --writable /my/container/directory/` launches a shell inside the container from which we can continue our software installation and testing.  Note: the `--writable` flag requires sudo priveleges, without `--writable` the container would be read only (even though it is a `--sandbox` container.
+
+Once you are finished installing and testing your software, do not forget to convert your `--sandbox` container back to a `.simg` with 
+`sudo singularity build my-container.simg /my/container/directory/`
+
+##### Binding with `-B`
+
+By default the only directory shared between the host and container is /home/$USER.  This means other user's home directories are not accessible from within the container (nor are other useful directories like /scratch).
+To remedy this you can specufy bind paths with the `--bind` or `-B` option.  
+The format for bind baths is as follows:
+
+```
+singularity shell -B src:dest cuda.simg
+```
+
+Where `src` is a path on the host and `dest` is a path within the container.  If no `dest` path is provided it will use the same path as `src` inside the container.
+
+##### Nvidia GPU support
+
+Singularity containers support direct access to a local GPU only when given the `--nv` flag.
+
+```
+singularity shell --nv cuda.simg
+```
+
+This does more than just allow access to the GPU, it also binds a number of specified nvidia and cuda libraries into the container in the following directory:
+
+```
+/.singularity.d/lib/
+```
+
+Note: this path may need to be added to your defualt paths for cuda to work (in ubuntu you can copy the `singularity-nvidia.conf` file in this git repository to `/etc/ld.so.conf.d/singularity-nvidia.conf`.  You may need to reload the container for this to take effect.
 
 
