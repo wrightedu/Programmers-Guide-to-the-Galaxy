@@ -1,10 +1,8 @@
 # Folders            #
 ######################
-*__pycache__/
+__pycache__/
 corgis/
 dogs/
-.vscode/
-
 
 # Logs and databases #
 ######################
@@ -12,6 +10,8 @@ dogs/
 *.sql
 *.sqlite
 *.swp
+status.txt
+log
 
 # OS generated files #
 ######################
@@ -27,9 +27,19 @@ Thumbs.db
 # Secrets            #
 ######################
 *.env
+token
+
 
 # Containers         #
 # ####################
 *.simg
 *.sif
+
+# Virtual Env        #
+######################
+venv/
+
+# Discord Bot unique #
+######################
+reaction_roles*
 
