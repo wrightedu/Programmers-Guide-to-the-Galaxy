@@ -102,7 +102,7 @@ Singularity is the container solution we use on the WSU HPC environment. It allo
 
 #### Installing Singularity
 
-Using your own linux system where you have root access, follow the guide here:  [Quick Installation steps](https://docs.sylabs.io/guides/3.10/user-guide/quick_start.html#quick-installation-steps)
+Using your own linux system where you have root access, follow the guide here:  [Quick Installation steps](https://docs.sylabs.io/guides/latest/user-guide/quick_start.html#quick-installation-steps)
 
 #### Building Containers
 
