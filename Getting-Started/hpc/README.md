@@ -7,21 +7,30 @@
 * [Common #SBATCH options](README.md#common-sbatch-options)
 * [Containers (Singularity)](README.md#singularity)
   * [Installing Singularity](README.md#installing-singularity)
-  * [Quick install shortcut](https://docs.sylabs.io/guides/3.10/user-guide/quick_start.html#quick-installation-steps)
+  * [Quick install shortcut](https://docs.sylabs.io/guides/latest/user-guide/quick_start.html#quick-installation-steps)
   * [Building a container](README.md#building-containers)
   * [Using containers with GPU (the `-nv` option)](README.md#nvidia-gpu-support)
 
 ## Overview and resources
 
+  The CSE HPC cluster can be accessed via SSH by all WSU engineering students, faculty, and staff using their campus accounts.  
+  Usage and metrics are monitored but access to even the most advanced GPU is available to any student who has a need for such resources. 
+  
   The CSE HPC cluster has the following nodes available:
   
   * 24x CPU compute nodes (16 CPU cores and 180GB RAM, no GPU)
   * 1x NVIDIA P100 node (20 CPU cores, 250GB RAM, 8x NVIDIA p100 GPUs)
+    * The NVIDIA P100 has 3584 cuda cores and 16GB vRAM [P100 datasheet](https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-p100/pdf/nvidia-tesla-p100-PCIe-datasheet.pdf)
   * 2x NVIDIA A100 nodes (56 CPU cores, 252GB RAM, 1x NVIDIA a100 GPU per node)
 
-  The NVIDIA P100 has 3584 cuda cores and 16GB vRAM [P100 datasheet](https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-p100/pdf/nvidia-tesla-p100-PCIe-datasheet.pdf)
+  Each node has access to a shared `/home` directory that is runnign on a high speed BeeGFS file system with 60TB of storage available.  They are connected to this storage and to each otehr with a 
+  200 GB/s Omnipath network in addition to a 10GB/s ethernet network.
 
-  The NVIDIA A100 has 6912 cuda cores and 80GB vRAM [A100 datasheet](https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/nvidia-a100-datasheet-us-nvidia-1758950-r4-web.pdf)
+  GPU information:
+  
+  * The NVIDIA P100 has 3584 cuda cores and 16GB vRAM [P100 datasheet](https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-p100/pdf/nvidia-tesla-p100-PCIe-datasheet.pdf)
+  * The NVIDIA A100 has 6912 cuda cores and 80GB vRAM [A100 datasheet](https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/nvidia-a100-datasheet-us-nvidia-1758950-r4-web.pdf)
+
 
 ## Access
 
@@ -29,7 +38,7 @@
 
   You can adapt the following in order to connect to this system using your campus credentials: 
 
-  ```
+  ```bash
   ssh w###abc@fry.cs.wright.edu
   ```
 
@@ -41,6 +50,7 @@
 
   This guide was [templated from here,](https://support.ceci-hpc.be/doc/_contents/QuickStart/SubmittingJobs/SlurmTutorial.html) which goes into more detail regarding many of these commands.
   Another greate resource is the [Slurm Quick Start User Guide](https://slurm.schedmd.com/quickstart.html) which has links to other good slurm documentation.
+
 
   Resource sharing on a High Performance Computer (HPC) system is typically organized by a piece of software called a resource manager or job scheduler.  Users submit jobs which are scheduled and allocated resources (CPU cores, GPU, RAM, time, etc.) by the resource manager.  **You cannot access any resources on this system without an active Slurm job.**
 
@@ -103,7 +113,7 @@ Singularity is the container solution we use on the WSU HPC environment. It allo
 
 #### Installing Singularity
 
-Using your own linux system where you have root access, follow the guide here:  [Quick Installation steps](https://docs.sylabs.io/guides/3.10/user-guide/quick_start.html#quick-installation-steps)
+Using your own linux system where you have root access, follow the guide here:  [Quick Installation steps](https://docs.sylabs.io/guides/latest/user-guide/quick_start.html#quick-installation-steps)
 
 #### Building Containers
 
