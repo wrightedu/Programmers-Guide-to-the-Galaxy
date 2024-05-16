@@ -1,10 +1,14 @@
 # Architecture
 
 This document describes the high level architecture of the project.  Things to make sure you note:
+
 * [Bird's Eye View](ARCHITECTURE.md#birds-eye-view)
 * [Code Map](ARCHITECTURE.md#code-map)
 
 ## Bird's Eye View
+
+But I'm not a bird...
+
 Delete this section by highlighting this line and in vim: `d9d`
 
 At the highest level, this project aims to inform a user on working with the team.  Top level 
