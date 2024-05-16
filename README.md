@@ -25,8 +25,6 @@ necessary.
 To find out more about the files and folders, which will also get you up to speed on
 how to use this repository, check out the `ARCHITECTURE.md`. 
 
-Some change...
-
 ## Contributing
 
 After you are familiar with the architecture of the project (in this project that means
