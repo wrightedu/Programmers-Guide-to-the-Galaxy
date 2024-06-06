@@ -80,6 +80,10 @@ SQL is used to perform various operations on the data stored in these databases.
 
 SQLite is a serverless database system, meaning it doesn't require a separate server process; instead, the database engine is embedded directly into the application. It is self-contained, consisting of a single library that offers a full-featured SQL database engine. SQLite requires zero configuration, eliminating the need for setup or administration, making it ideal for embedded systems, mobile apps, and small projects. Additionally, it is file-based, with the entire database stored in a single file on disk, simplifying backups and transfers.
 
+## What's the difference between SQL and SQLite?
+
+
+
 ## How to use SQLite
 
 ### Setting up
