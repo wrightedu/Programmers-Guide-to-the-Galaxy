@@ -78,9 +78,23 @@ SQL is used to perform various operations on the data stored in these databases.
 
 ## We use SQLite
 
-SQLite is a popular database engine that is known for its simplicity and ease of use. Unlike many other database systems, SQLite dooesn't require a seperate server process. The database engine is embedded directly into the application. SQLite is a single library that provides a full-featured SQL database engine. 
-
-
+SQLite is a serverless database system, meaning it doesn't require a separate server process; instead, the database engine is embedded directly into the application. It is self-contained, consisting of a single library that offers a full-featured SQL database engine. SQLite requires zero configuration, eliminating the need for setup or administration, making it ideal for embedded systems, mobile apps, and small projects. Additionally, it is file-based, with the entire database stored in a single file on disk, simplifying backups and transfers.
 
 ## How to use SQLite
 
+### Setting up
+
+- **1. Installation:**
+  - SQLite is often pre-installed on many systems. If not, you can download it from https://sqlite.org/.
+  - For Windows, download the precompiled binaries. For macOS and Linux, you can often use package managers like `brew` or `apt`.
+- **2. SQLite Command Line Interface (CLI):**
+  - You can interact with SQLite databases using the SQLite CLI tool. Launch it by running `sqlite3` in your terminal or command prompt.
+ 
+### Basic operations with SQLite
+
+- **1. Creating a Database:**
+  - You create a database by simply specifying a file name.
+  ```
+  sqlite3 my_database.db
+  ```
+  This opens the SQLite prompt and creates a new database file `my_database.db`.
