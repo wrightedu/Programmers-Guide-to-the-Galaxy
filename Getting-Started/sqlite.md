@@ -78,11 +78,11 @@ SQL is used to perform various operations on the data stored in these databases.
 
 ## We use SQLite
 
-SQLite is a serverless database system, meaning it doesn't require a separate server process; instead, the database engine is embedded directly into the application. It is self-contained, consisting of a single library that offers a full-featured SQL database engine. SQLite requires zero configuration, eliminating the need for setup or administration, making it ideal for embedded systems, mobile apps, and small projects. Additionally, it is file-based, with the entire database stored in a single file on disk, simplifying backups and transfers.
+SQLite is a serverless database system, meaning it doesn't require a separate server process; instead, the database engine is embedded directly into the application. It is self-contained, consisting of a single library that offers a full-featured SQL database engine. SQLite requires zero configuration, eliminating the need for setup or administration, making it ideal for our Discord bot. Additionally, it is file-based, with the entire database stored in a single file on disk, simplifying backups and transfers.
 
 ## What's the difference between SQL and SQLite?
 
-
+From a really simple outlook, SQL is a language used to interact with relational databases, and SQLite is a database management system that uses SQL. From an architecture standpoint, SQL requires a DBMS (like MySQL or Oracle) to execute commands, and SQLite is an embedded DBMS that integrates directly into the application. 
 
 ## How to use SQLite
 
@@ -102,3 +102,69 @@ SQLite is a serverless database system, meaning it doesn't require a separate se
   sqlite3 my_database.db
   ```
   This opens the SQLite prompt and creates a new database file `my_database.db`.
+
+- **2. Creating Tables:**
+  - When creating tables, the order in which you create them matters, especially when there are references or foreign keys involved. Ideally, you should create tables without foreign keys first to avoid errors and ensure referential integrity.
+  ```
+  CREATE TABLE authors (
+    id INTEGER PRIMARY KEY,
+    name TEXT
+  );
+  
+  CREATE TABLE books (
+    id INTEGER PRIMARY KEY,
+    title TEXT,
+    author_id INTEGER,
+    FOREIGN KEY (author_id) REFERENCES authors(id)
+  );
+  ```
+  In this example, the `authors` table is created first because the `books` table references it with a foreign key.
+
+- **3. Inserting Data:**
+  ```
+  INSERT INTO authors (name) VALUES ('George Orwell');
+  INSERT INTO books (title, author_id) VALUES ('1984', 1);
+  ```
+  This inserts data into the `authors` and `books` tables.
+
+- **4. Querying Data:**
+  ```
+  SELECT * FROM books;
+  ```
+  This command retrieves all rows from the `books` table.
+  ```
+  SELECT * FROM books WHERE author_id = 1;
+  ```
+  This retrieves books written by the author with `id = 1`.
+
+- **5. Updating Data:**
+  ```
+  UPDATE books SET title = 'Animal Farm' WHERE id = 1;
+  ```
+  This updates the title of the book with `id = 1`.
+
+- **6. Deleting Data:**
+  ```
+  DELETE FROM books WHERE id = 1;
+  ```
+  This deletes the book with `id = 1`.
+
+### Interacting Directly with the Database File in the Terminal
+
+- **Opening the Database:**
+  - Use the `sqlite3` command followed by the database file name to open the database.
+    ```
+    sqlite3 my_database.db
+    ```
+
+- **Running SQL Commands:**
+  - Once the database is open, you can start running SQL commands directly.
+  ```
+  .tables       -- Lists all tables in the database
+  .schema books -- Shows the schema of the books table
+  .mode column  -- Sets the output mode to column
+  SELECT * FROM books; -- Executes a query to retrieve data
+  ```
+
+- **Exiting SQLite:**
+  - To exit SQLite prompt, type `.exit` or press `Ctrl + D`.
