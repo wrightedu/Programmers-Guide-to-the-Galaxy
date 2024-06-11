@@ -2,11 +2,11 @@
 
 ## What is SQL?
 
-SQL stands for Structured Query Language, and it's a standard language used to interact with databases. Think of it as a way to talk and manipulate databases, which are collections of organize data.
+SQL stands for Structured Query Language, and it's a standard language used to interact with databases. Think of it as a way to talk and manipulate databases, which are collections of organized data.
 
 ## What is a database?
 
-A database is liuke a digital filing system that stores and organizes data. This data is often kept in tables, which are somewhat similar to spreadsheets. Each table contains rows and columns. Rows are the individual records, and columns are the attributes of those records.
+A database is like a digital filing system that stores and organizes data. This data is often kept in tables, which are somewhat similar to spreadsheets. Each table contains rows and columns. Rows are the individual records, and columns are the attributes of those records.
 
 ## Basic components of SQL
 
