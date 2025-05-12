@@ -117,7 +117,7 @@ Using your own linux system where you have root access, follow the guide here:  
 
 #### Building Containers
 
-The `singularity build` command is used to create singularity containers.  With it you specfy the output container image and a target input to build the contianer from.
+The `singularity build` command is used to create singularity containers.  With it you specfy the output container image and a target input to build the contianer from. **You cannot build containers on fry, due to security restrictions.** You have to transfer or pull images to use them on the system.
 
 ```
 singularity build <OUTPUT-IMAGE> <INPUT-BUILDFILE>
@@ -152,7 +152,7 @@ Once you are finished installing and testing your software, do not forget to con
 
 #### Advanced Singularity topics
 
-##### [Singularity definition file](### Using and editing containers with `singularity shell` 
+##### [Singularity definition file](Using and editing containers with `singularity shell`) 
 The `sudo singularity shell --writable /my/container/directory/` launches a shell inside the container from which we can continue our software installation and testing.  Note: the `--writable` flag requires sudo privileges, without `--writable` the container would be read only (even though it is a `--sandbox` container.
 
 Once you are finished installing and testing your software, do not forget to convert your `--sandbox` container back to a `.simg` with 
@@ -160,7 +160,7 @@ Once you are finished installing and testing your software, do not forget to con
 
 ##### Binding with `-B`
 
-By default the only directory shared between the host and container is /home/$USER.  This means other user's home directories are not accessible from within the container (nor are other useful directories like /scratch).
+By default the only directory shared between the host and container is /home/$USER.  This means other user's home directories are not accessible from within the container (nor are other useful directories like /scratch). You cannot bind to `/` directories like `/opt`, these are disabled in the config for singularity.
 To remedy this you can specify bind paths with the `--bind` or `-B` option.  
 The format for bind paths is as follows:
 
@@ -168,7 +168,7 @@ The format for bind paths is as follows:
 singularity shell -B src:dest cuda.simg
 ```
 
-Where `src` is a path on the host and `dest` is a path within the container.  If no `dest` path is provided it will use the same path as `src` inside the container.
+Where `src` is a path on the host and `dest` is a path within the container.  If no `dest` path is provided it will use the same path as `src` inside the container. 
 
 ##### Nvidia GPU support
 
@@ -186,4 +186,130 @@ This does more than just allow access to the GPU, it also binds a number of spec
 
 Note: this path may need to be added to your default paths for cuda to work (in ubuntu you can copy the `singularity-nvidia.conf` file in this git repository to `/etc/ld.so.conf.d/singularity-nvidia.conf`.  You may need to reload the container for this to take effect.
 
+## Modern development with OpenMPI
+One concern is how to have a modern tools working with libraries that can only be installed on cluster computers. I was able to get this working with these files.
+
+```sh
+#!/bin/sh
+
+rsync -av \
+  --exclude */build \
+  -e ssh . fry:/home/wXXXABC/hpc/
+```
+```makefile
+CC=mpicc
+# We aren't using fry to cross compile or as a compiler farm so we can safetly use march and mtune.
+# Debug
+# CFLAGS=-std=c17 -g 
+# Release
+CFLAGS=-std=c17 -O3 -march=native -mtune=native
+# **Most** times you don't need to link m(ath) or mpi, but not always. 
+LDFLAGS=-lm -lmpi -fopenmp
+
+NAME=my-project.bin
+SRC=.
+BUILD_DIR=build
+
+CORES ?= 2
+LINES = 50
+export OMP_NUM_THREADS ?= 2
+
+BIN=$(BUILD_DIR)/$(NAME)
+SRCS=$(wildcard $(SRC)/*.c)
+OBJS=$(patsubst $(SRC)/%.c, $(BUILD_DIR)/%.o, $(SRCS))
+
+all: $(BIN)
+
+$(BIN): $(OBJS)
+        $(CC) $(CFLAGS) $(OBJS) -o $(BIN) $(LDFLAGS)
+
+$(BUILD_DIR)/%.o: $(SRC)/%.c
+        mkdir -p $(BUILD_DIR) $(SRC)
+        $(CC) $(CFLAGS) -c $< -o $@ $(LDFLAGS)
+
+clean:
+        rm -r $(BUILD_DIR)
+
+mpirun: $(BIN)
+        mpirun -x OMP_NUM_THREADS=$(OMP_NUM_THREADS) -np $(CORES) $(BIN) $(ARGS)
+
+run: $(BIN)
+        $(BIN) $(ARGS)
+
+submit: 
+        sbatch proj*.sbatch
+
+watch:
+        watch tail -n $(LINES) proj*.txt
+```
+Example 
+`CORES=16 OMP_NUM_THREADS=2 make run`
+
+Example with 5 stdin inputs.
+`CORES=16 OMP_NUM_THREADS=2 make run "ARGS=1 2 3 4 5"`
+
+#### Option 1
+Because of the nature of this libraries it is difficult to install, if not listed assume no one knows how to install and build with it.
+
+##### Nixos
+This is a directory flake that will automatically install these on entering, and uninstall them when leaving. Make sure you have direnv setup as well, or use `nix develop --no-pure-eval`.
+```nix
+{
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    devenv.url = "github:cachix/devenv";
+  };
+
+  outputs =
+    inputs@{ flake-parts, nixpkgs, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      imports = [ inputs.devenv.flakeModule ];
+      systems = nixpkgs.lib.systems.flakeExposed;
+
+      perSystem =
+        {
+          lib,
+          pkgs,
+          ...
+        }:
+        {
+          # Per-system attributes can be defined here. The self' and inputs'
+          # module parameters provide easy access to attributes of the same
+          # system.
+          devenv.shells.default = {
+            # https://devenv.sh/reference/options/
+            dotenv.disableHint = true;
+
+            languages.c.enable = true;
+            packages = with pkgs; [
+              openmpi
+              rsync
+              singularity
+            ];
+
+            env = {
+              "awesome-variable" = true;
+            };
+          };
+        };
+    };
+}
+```
+```sh
+if ! has nix_direnv_version || ! nix_direnv_version 2.2.1; then
+  source_url "https://raw.githubusercontent.com/nix-community/nix-direnv/2.2.1/direnvrc" "sha256-zelF0vLbEl5uaqrfIzbgNzJWGmLzCmYAkInj/LNxvKs="
+fi
+
+watch_file devenv.nix
+watch_file devenv.lock
+watch_file devenv.yaml
+if ! use flake . --impure
+then
+  echo "devenv could not be build. The devenv environment was not loaded. Make the necessary changes to devenv.nix and hit enter to try again." >&2
+fi
+```
+
+
+#### Option 2
+Using a tool like sftp download the headers from fry to your computer. They are stored in `/opt/apps/mpi/openmpi-4*_gcc-*/include` once they are downloaded add the path to clangd's environment variable `export C_INCLUDE_PATH="/path/to/include:$C_INCLUDE_PATH"`.
 
