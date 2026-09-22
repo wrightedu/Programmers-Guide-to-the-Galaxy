@@ -19,11 +19,11 @@
   The CSE HPC cluster has the following nodes available:
   
   * 24x CPU compute nodes (16 CPU cores and 180GB RAM, no GPUsi
-  * 2x high memory nodes  (`<N>` CPU cores, 2TB RAM per node, no GPU)
+  * 2x high memory nodes  (64 CPU cores, 1.5TB RAM per node, no GPU)
   * 1x NVIDIA P100 node (20 CPU cores, 250GB RAM, 8x NVIDIA p100 GPUs)
   * 2x NVIDIA A100 nodes (56 CPU cores, 252GB RAM, 1x NVIDIA a100 GPU per node)
-  * 2x NVIDIA L40S nodes (`<N>` CPU cores, `<N>`GB RAM, 8x NVIDIA L40S GPUs per node)
-  * 1x NVIDIA H200 node  (`<N>` CPU cores, `<N>`GB RAM, 4x NVIDIA H200 GPUs)
+  * 2x NVIDIA L40S nodes (64 CPU cores, 340GB RAM, 8x NVIDIA L40S GPUs per node)
+  * 1x NVIDIA H200 node  (64 CPU cores, 340GB RAM, 4x NVIDIA H200 GPUs)
 
   Each node has access to a shared `/home` directory that is running on a high speed BeeGFS file system with 60TB of storage available.  They are connected to this storage and to each otehr with a 
   200 GB/s Omnipath network in addition to a 10GB/s ethernet network.
