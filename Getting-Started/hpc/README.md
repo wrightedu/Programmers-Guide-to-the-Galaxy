@@ -18,18 +18,22 @@
   
   The CSE HPC cluster has the following nodes available:
   
-  * 24x CPU compute nodes (16 CPU cores and 180GB RAM, no GPU)
+  * 24x CPU compute nodes (16 CPU cores and 180GB RAM, no GPUsi
+  * 2x high memory nodes  (`<N>` CPU cores, 2TB RAM per node, no GPU)
   * 1x NVIDIA P100 node (20 CPU cores, 250GB RAM, 8x NVIDIA p100 GPUs)
-    * The NVIDIA P100 has 3584 cuda cores and 16GB vRAM [P100 datasheet](https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-p100/pdf/nvidia-tesla-p100-PCIe-datasheet.pdf)
   * 2x NVIDIA A100 nodes (56 CPU cores, 252GB RAM, 1x NVIDIA a100 GPU per node)
+  * 2x NVIDIA L40S nodes (`<N>` CPU cores, `<N>`GB RAM, 8x NVIDIA L40S GPUs per node)
+  * 1x NVIDIA H200 node  (`<N>` CPU cores, `<N>`GB RAM, 4x NVIDIA H200 GPUs)
 
-  Each node has access to a shared `/home` directory that is runnign on a high speed BeeGFS file system with 60TB of storage available.  They are connected to this storage and to each otehr with a 
+  Each node has access to a shared `/home` directory that is running on a high speed BeeGFS file system with 60TB of storage available.  They are connected to this storage and to each otehr with a 
   200 GB/s Omnipath network in addition to a 10GB/s ethernet network.
 
   GPU information:
   
   * The NVIDIA P100 has 3584 cuda cores and 16GB vRAM [P100 datasheet](https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-p100/pdf/nvidia-tesla-p100-PCIe-datasheet.pdf)
   * The NVIDIA A100 has 6912 cuda cores and 80GB vRAM [A100 datasheet](https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/nvidia-a100-datasheet-us-nvidia-1758950-r4-web.pdf)
+ * The NVIDIA L40S has 18176 CUDA cores and 48GB vRAM [L40S product page](https://www.nvidia.com/en-us/data-center/l40s/)
+  * The NVIDIA H200 has 16896 CUDA cores and 141GB vRAM [H200 product page](https://www.nvidia.com/en-us/data-center/h200/)
 
 
 ## Access
