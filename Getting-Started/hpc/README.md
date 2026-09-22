@@ -18,7 +18,7 @@
   
   The CSE HPC cluster has the following nodes available:
   
-  * 24x CPU compute nodes (16 CPU cores and 180GB RAM, no GPUsi
+  * 24x CPU compute nodes (16 CPU cores and 180GB RAM, no GPU)
   * 2x high memory nodes  (64 CPU cores, 1.5TB RAM per node, no GPU)
   * 1x NVIDIA P100 node (20 CPU cores, 250GB RAM, 8x NVIDIA p100 GPUs)
   * 2x NVIDIA A100 nodes (56 CPU cores, 252GB RAM, 1x NVIDIA a100 GPU per node)
