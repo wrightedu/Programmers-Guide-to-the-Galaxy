@@ -1,0 +1,21 @@
+Bootstrap: docker
+From: ollama/ollama:{{ OLLAMA_VERSION }}
+
+%arguments
+    OLLAMA_VERSION=latest
+
+%post
+    mkdir -p /root/.ollama
+
+%environment
+    export OLLAMA_HOST=0.0.0.0:11434
+    export OLLAMA_MODELS=/root/.ollama
+
+%runscript
+    echo "Starting Ollama server, the default host is $OLLAMA_HOST"
+    exec ollama serve
+
+%help
+    This container runs an Ollama server. See the `ollama.sbatch`.
+    To use it on HPC with GPU support, run:
+    apptainer run --nv -B /path/to/models:/root/.ollama ollama.sif
