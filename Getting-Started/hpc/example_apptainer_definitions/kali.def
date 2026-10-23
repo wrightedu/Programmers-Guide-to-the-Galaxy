@@ -1,0 +1,89 @@
+Bootstrap: docker
+From: kalilinux/kali-rolling
+
+# Headless Kali Linux container (command-line tools only, no desktop).
+#
+# Build (default: kali-linux-headless, roughly 5-8 GB):
+#   apptainer build --fakeroot kali.sif kali.def
+#
+# Smaller build (just the Kali base system + a few tools you pick):
+#   apptainer build --fakeroot --build-arg KALI_META=kali-linux-core kali-core.sif kali.def
+#
+# Interactive shell:
+#   apptainer shell kali.sif
+#
+# Tip: big builds can fill /tmp. Point Apptainer at a roomier temp dir first:
+#   export APPTAINER_TMPDIR=$HOME/apptainer-tmp && mkdir -p $APPTAINER_TMPDIR
+
+%arguments
+    KALI_META=kali-linux-headless
+
+%environment
+    export LC_ALL=C.UTF-8
+    export LANG=C.UTF-8
+    export TERM=xterm-256color
+
+%post
+    set -e
+    export DEBIAN_FRONTEND=noninteractive
+
+    # Answer install-time prompts ahead of time so the build never stops to ask
+    echo "wireshark-common wireshark-common/install-setuid boolean false" | debconf-set-selections
+    echo "kismet-capture-common kismet-capture-common/install-setuid boolean false" | debconf-set-selections
+    echo "macchanger macchanger/automatically_run boolean false" | debconf-set-selections
+    echo "sslh sslh/inetd_or_standalone select standalone" | debconf-set-selections
+
+    apt-get update
+    apt-get -y full-upgrade
+    apt-get install -y --no-install-recommends \
+        {{ KALI_META }} \
+        ca-certificates \
+        curl \
+        wget \
+        git \
+        vim \
+        nano \
+        tmux \
+        less \
+        man-db \
+        iputils-ping \
+        iproute2 \
+        dnsutils \
+        python3 \
+        python3-pip
+
+    # Shrink the image
+    apt-get clean
+    rm -rf /var/lib/apt/lists/*
+
+%test
+    . /etc/os-release && echo "$PRETTY_NAME"
+    command -v nmap >/dev/null && nmap --version | head -n 1 || echo "nmap not installed in this build"
+
+%runscript
+    # `apptainer run kali.sif` drops you into bash; `apptainer run kali.sif nmap -h` runs a command
+    if [ $# -eq 0 ]; then
+        exec /bin/bash
+    else
+        exec "$@"
+    fi
+
+%labels
+    Maintainer WSU CSE devteam
+    Description Headless Kali Linux (kali-rolling) command-line tools
+
+%help
+    Headless Kali Linux container (no desktop).
+
+    Default build installs the kali-linux-headless metapackage.
+    Smaller build: --build-arg KALI_META=kali-linux-core
+
+    Usage:
+      apptainer shell kali.sif          # interactive shell
+      apptainer exec kali.sif nmap -h   # run one tool
+
+    You are the same (non-root) user inside the container as outside, so tools
+    that need raw sockets or root (nmap -sS/-O, packet capture, etc.) will not
+    work on the shared cluster. Use a VM or lab machine you control for those.
+
+    Only test systems you own or have written permission to test.
