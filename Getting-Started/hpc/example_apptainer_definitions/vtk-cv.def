@@ -1,0 +1,144 @@
+Bootstrap: docker
+From: ubuntu:24.04
+
+# VTK + OpenCV + NumPy (Python 3.12) container, headless-friendly.
+#
+# Build:
+#   apptainer build --fakeroot vtk-opencv.sif vtk-opencv.def
+#
+# Run on a CPU node (software rendering via OSMesa):
+#   apptainer exec vtk-opencv.sif python my_script.py
+#
+# Run on a GPU node (hardware offscreen rendering via EGL):
+#   apptainer exec --nv vtk-opencv.sif python my_script.py
+#
+# Notes:
+# * VTK 9.4+ wheels include X, EGL and OSMesa support and pick one at
+#   runtime, so the same image works on your desktop (X), on GPU nodes (EGL
+#   on the NVIDIA driver) and on CPU-only nodes (EGL/OSMesa via Mesa software
+#   rendering). VTK prints a harmless "bad X server connection" warning when
+#   there is no display before falling back. To force a backend, set:
+#     export APPTAINERENV_VTK_DEFAULT_OPENGL_WINDOW=vtkOSOpenGLRenderWindow   # CPU / OSMesa
+#     export APPTAINERENV_VTK_DEFAULT_OPENGL_WINDOW=vtkEGLRenderWindow        # GPU / EGL
+# * We use opencv-python-headless (no Qt/GUI). The GUI build of OpenCV ships
+#   its own Qt/X libraries that can clash with VTK, and cv2.imshow() has no
+#   display on the cluster anyway -- save images with cv2.imwrite() instead.
+
+%arguments
+    VTK_SPEC=vtk>=9.4,<10
+    OPENCV_SPEC=opencv-python-headless>=4.10
+    NUMPY_SPEC=numpy>=2
+
+%environment
+    export PATH=/opt/venv/bin:$PATH
+    export VIRTUAL_ENV=/opt/venv
+    # Keep packages from ~/.local (your home dir is mounted in the container)
+    # from leaking in and overriding the container's packages.
+    export PYTHONNOUSERSITE=1
+    export LC_ALL=C.UTF-8
+    export LANG=C.UTF-8
+
+%post
+    set -e
+    export DEBIAN_FRONTEND=noninteractive
+
+    apt-get update
+    apt-get install -y --no-install-recommends \
+        ca-certificates \
+        python3 \
+        python3-venv \
+        python3-dev \
+        build-essential \
+        git \
+        wget \
+        vim \
+        libgl1 \
+        libegl1 \
+        libegl-mesa0 \
+        libgl1-mesa-dri \
+        libglvnd0 \
+        libosmesa6 \
+        libx11-6 \
+        libxext6 \
+        libxrender1 \
+        libxcursor1 \
+        libxfixes3 \
+        libxft2 \
+        libxinerama1 \
+        libsm6 \
+        libice6 \
+        libgomp1
+    rm -rf /var/lib/apt/lists/*
+
+    # Python virtual environment (Ubuntu 24.04 blocks pip installs into the
+    # system Python, so everything goes into /opt/venv)
+    python3 -m venv /opt/venv
+    /opt/venv/bin/pip install --no-cache-dir --upgrade pip setuptools wheel
+
+    /opt/venv/bin/pip install --no-cache-dir \
+        "{{ NUMPY_SPEC }}" \
+        "{{ VTK_SPEC }}" \
+        "{{ OPENCV_SPEC }}" \
+        pandas \
+        scipy \
+        matplotlib \
+        jupyterlab \
+        pillow
+
+    # Optional extras -- uncomment what you need:
+    # /opt/venv/bin/pip install --no-cache-dir pyvista imageio meshio jupyterlab
+
+%test
+    python - <<'EOF'
+import numpy, cv2, vtk, pandas
+print("numpy ", numpy.__version__)
+print("pandas", pandas.__version__)
+print("opencv", cv2.__version__)
+print("vtk   ", vtk.vtkVersion.GetVTKVersion())
+
+# Offscreen render a sphere with no display and no GPU, then read it back
+# through NumPy + OpenCV to prove the three libraries work together.
+# (A "bad X server connection" warning here is normal: VTK tries X first,
+# then falls back to EGL/OSMesa software rendering.)
+from vtkmodules.util.numpy_support import vtk_to_numpy
+
+sphere = vtk.vtkSphereSource()
+mapper = vtk.vtkPolyDataMapper()
+mapper.SetInputConnection(sphere.GetOutputPort())
+actor = vtk.vtkActor()
+actor.SetMapper(mapper)
+ren = vtk.vtkRenderer()
+ren.AddActor(actor)
+win = vtk.vtkRenderWindow()
+win.SetOffScreenRendering(1)
+win.AddRenderer(ren)
+win.SetSize(64, 64)
+win.Render()
+
+grab = vtk.vtkWindowToImageFilter()
+grab.SetInput(win)
+grab.Update()
+img = vtk_to_numpy(grab.GetOutput().GetPointData().GetScalars()).reshape(64, 64, -1)
+gray = cv2.cvtColor(img[:, :, :3].copy(), cv2.COLOR_RGB2GRAY)
+print("offscreen render OK via", win.GetClassName(), "| mean pixel", round(float(gray.mean()), 1))
+EOF
+
+%runscript
+    # `apptainer run vtk-opencv.sif my_script.py` runs python with your args
+    exec python "$@"
+
+%labels
+    Maintainer WSU CSE devteam
+    Description VTK + OpenCV (headless) + NumPy, Python 3.12
+
+%help
+    VTK + OpenCV + NumPy container (Python 3.12, Ubuntu 24.04).
+
+    CPU node:  apptainer exec vtk-opencv.sif python my_script.py
+    GPU node:  apptainer exec --nv vtk-opencv.sif python my_script.py
+
+    There is no display on the cluster: render with
+    renderWindow.SetOffScreenRendering(1) and save results to files
+    (vtkPNGWriter, cv2.imwrite). If VTK picks the wrong backend, set
+    APPTAINERENV_VTK_DEFAULT_OPENGL_WINDOW to vtkOSOpenGLRenderWindow (CPU)
+    or vtkEGLRenderWindow (GPU) before running.
