@@ -1,0 +1,30 @@
+Bootstrap: docker
+From: ubuntu:20.04
+
+%post
+    export DEBIAN_FRONTEND=noninteractive
+    apt-get update
+    apt-get install -y --no-install-recommends wget ca-certificates gnupg software-properties-common
+
+    # Install OpenFOAM 7 from the openfoam.org repository (skip if your base image already has it)
+    wget -q -O - https://dl.openfoam.org/gpg.key | apt-key add -
+    add-apt-repository -y http://dl.openfoam.org/ubuntu
+    apt-get update
+    apt-get install -y --no-install-recommends openfoam7
+    rm -rf /var/lib/apt/lists/*
+
+    # Source the OpenFOAM bashrc ONCE, at build time, in a real bash shell,
+    # and save the resulting variables as plain exports in the container's
+    # environment file. Apptainer loads that file on every run/exec/shell,
+    # so nothing needs to be sourced at runtime.
+    ENVFILE="${APPTAINER_ENVIRONMENT:-$SINGULARITY_ENVIRONMENT}"
+    /bin/bash -c '. /opt/openfoam7/etc/bashrc && export -p' \
+        | grep -E '^declare -x (WM_|FOAM_|MPI_|PATH=|LD_LIBRARY_PATH=|MANPATH=|ParaView|PARAVIEW|CGAL|BOOST|SCOTCH|METIS|FFTW|PTSCOTCH|OPAL_|OMPI_)' \
+        | sed 's/^declare -x /export /' >> "$ENVFILE"
+
+    # Also source OpenFOAM for interactive bash shells inside the container
+    echo '. /opt/openfoam7/etc/bashrc' >> /etc/bash.bashrc
+
+%runscript
+    # Run the given command (or an interactive bash shell) with OpenFOAM loaded
+    exec /bin/bash -c '. /opt/openfoam7/etc/bashrc && exec "$@"' bash "${@:-/bin/bash}"
