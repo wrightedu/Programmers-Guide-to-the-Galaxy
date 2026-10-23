@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# 04_array.sbatch
+# array.sbatch
 # Run the same program many times with different inputs, as ONE submission.
 # Use for: parameter sweeps, processing many files, repeated random seeds.
 #
