@@ -1,16 +1,34 @@
 #!/bin/bash
 #
-#SBATCH --job-name=test_emb_arr
-#SBATCH --output=/home/%u/%x-%u-%j.out
+# 04_array.sbatch
+# Run the same program many times with different inputs, as ONE submission.
+# Use for: parameter sweeps, processing many files, repeated random seeds.
+#
+# Each array element is an independent job with its own SLURM_ARRAY_TASK_ID.
+# Submit once with sbatch; Slurm schedules each element on its own.
+
+#SBATCH --job-name=sweep
+#SBATCH --output=/home/%u/%x-%A_%a.out   # %A=array job id, %a=element index (one log each)
 #SBATCH --ntasks=1
-#SBATCH --time=10:00
-#SBATCH --mem-per-cpu=100
-#SBATCH --array=1-8
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=2G
+#SBATCH --time=00:20:00
+#SBATCH --array=0-7%4                    # elements 0..7, at most 4 running at once
 
-srun singularity exec mycontainer.simg ./my_program.exe $SLURM_ARRAY_TASK_ID
+set -euo pipefail
 
-##  For non-integer array usage
+# Blank example container, built from cpu-example.def
+CONTAINER=/home/$USER/containers/cpu-example.sif
 
+# --- Pattern A: list of parameter values -----------------------------------
+# Bash arrays are 0-indexed, so the array range starts at 0 to match.
 ARGS=(0.05 0.25 0.5 1 2 5 100 1000)
+VALUE=${ARGS[$SLURM_ARRAY_TASK_ID]}
 
-srun singularity exec mycontainer.simg ./my_program.exe ${ARGS[$SLURM_ARRAY_TASK_ID]}
+echo "Element $SLURM_ARRAY_TASK_ID of job $SLURM_ARRAY_JOB_ID using value $VALUE"
+srun apptainer exec "$CONTAINER" python3 my_program.py "$VALUE"
+
+# --- Pattern B: one input file per element (use instead of Pattern A) ------
+# Put one filename per line in inputs.txt, then set --array=1-<number of lines>.
+# INPUT=$(sed -n "${SLURM_ARRAY_TASK_ID}p" inputs.txt)
+# srun apptainer exec "$CONTAINER" python3 process.py "$INPUT"
