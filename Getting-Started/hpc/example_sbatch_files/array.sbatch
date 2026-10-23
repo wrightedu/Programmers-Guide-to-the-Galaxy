@@ -17,7 +17,7 @@
 
 set -euo pipefail
 
-# Blank example container, built from cpu-example.def
+# Small Python container, built from example_apptainer_definitions/cpu-example.def
 CONTAINER=/home/$USER/containers/cpu-example.sif
 
 # --- Pattern A: list of parameter values -----------------------------------
