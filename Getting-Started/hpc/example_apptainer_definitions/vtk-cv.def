@@ -4,7 +4,7 @@ From: ubuntu:24.04
 # VTK + OpenCV + NumPy (Python 3.12) container, headless-friendly.
 #
 # Build:
-#   apptainer build --fakeroot vtk-opencv.sif vtk-opencv.def
+#   apptainer build --fakeroot vtk-opencv.sif vtk-cv.def
 #
 # Run on a CPU node (software rendering via OSMesa):
 #   apptainer exec vtk-opencv.sif python my_script.py
@@ -86,7 +86,7 @@ From: ubuntu:24.04
         pillow
 
     # Optional extras -- uncomment what you need:
-    # /opt/venv/bin/pip install --no-cache-dir pyvista imageio meshio jupyterlab
+    # /opt/venv/bin/pip install --no-cache-dir pyvista imageio meshio
 
 %test
     python - <<'EOF'

@@ -1,10 +1,10 @@
 #!/bin/bash
 #
-# 01_basic_cpu.sbatch
+# basic-cpu.sbatch
 # The simplest useful job: one task, one CPU core, a time limit, and a memory limit.
 # Use for: serial programs, quick scripts, preprocessing.
 #
-# Submit:   sbatch 01_basic_cpu.sbatch
+# Submit:   sbatch basic-cpu.sbatch
 # Monitor:  squeue -u $USER
 # Cancel:   scancel <jobid>
 
@@ -20,7 +20,7 @@
 # Fail fast: stop on errors and on unset variables
 set -euo pipefail
 
-# Blank example container, built from cpu-example.def
+# Small Python container, built from example_apptainer_definitions/cpu-example.def
 CONTAINER=/home/$USER/containers/cpu-example.sif
 
 echo "Job $SLURM_JOB_ID started on $(hostname) at $(date)"

@@ -2,7 +2,7 @@
 
 * [Overview and resources](README.md#overview-and-resources)
 * [Access](README.md#access)
-  * [VPN install quick link](http://www.wright.edu/information-technology/virtual-private-network-vpn#getting-started)
+  * [VPN install quick link](https://www.wright.edu/information-technology/virtual-private-network-vpn#getting-started)
 * [Scheduling a job (SLURM)](README.md#slurm)
 * [Common #SBATCH options](README.md#common-sbatch-options)
 * [Containers (Apptainer)](README.md#apptainer)
@@ -27,7 +27,7 @@
   * 1x NVIDIA H200 node  (64 CPU cores, 340GB RAM, 4x NVIDIA H200 GPUs)
 
   Each node has access to a shared `/home` directory that is running on a high speed BeeGFS file system with 60TB of storage available.  They are connected to this storage and to each other with a 
-  200 GB/s Omnipath network in addition to a 10GB/s ethernet network.
+  200 Gb/s Omni-Path network in addition to a 10 Gb/s Ethernet network.
 
   GPU information:
   
@@ -49,7 +49,7 @@
 
   Access to any compute node via SSH is blocked unless a user has an active SLURM job scheduled (see using SLURM below).
 
-  Access from off campus requires use of the [campus VPN](http://www.wright.edu/information-technology/virtual-private-network-vpn#getting-started)
+  Access from off campus requires use of the [campus VPN](https://www.wright.edu/information-technology/virtual-private-network-vpn#getting-started)
 
 ## SLURM
 
@@ -110,7 +110,28 @@ The above job when submitted will run `nvidia-smi` on one of the a100 nodes and 
   # reference with $SLURM_ARRAY_TASK_ID
 ```
 
-More example job scripts are in [`example_sbatch_files/`](example_sbatch_files/).
+#### Example files
+
+More example job scripts are in [`example_sbatch_files/`](example_sbatch_files/), and the containers they use are built from the definition files in [`example_apptainer_definitions/`](example_apptainer_definitions/) (see [Building Containers](README.md#building-containers)).
+
+| Job script | What it shows | Container |
+|---|---|---|
+| [`basic-cpu.sbatch`](example_sbatch_files/basic-cpu.sbatch) | One core, a time limit and a memory limit: the simplest useful job | `cpu-example.def` |
+| [`multicore-cpu.sbatch`](example_sbatch_files/multicore-cpu.sbatch) | One process using many cores (multiprocessing, OpenMP, NumPy) | `cpu-example.def` |
+| [`array.sbatch`](example_sbatch_files/array.sbatch) | Job arrays for parameter sweeps or one-file-per-task processing | `cpu-example.def` |
+| [`gpu-with-apptainer.sbatch`](example_sbatch_files/gpu-with-apptainer.sbatch) | A GPU training job on an A100 with extra bind paths | `pytorch.def` |
+| [`ollama.sbatch`](example_sbatch_files/ollama.sbatch) | Running an LLM server inside a job and talking to it | `ollama.def` |
+
+| Definition file | What it builds |
+|---|---|
+| [`cpu-example.def`](example_apptainer_definitions/cpu-example.def) | Small Python container (NumPy, SciPy, pandas) for CPU jobs |
+| [`pytorch.def`](example_apptainer_definitions/pytorch.def) | PyTorch + conda-forge scientific stack; `--build-arg TORCH_CUDA=cu126` for the P100 node |
+| [`ollama.def`](example_apptainer_definitions/ollama.def) | Ollama LLM server |
+| [`vtk-cv.def`](example_apptainer_definitions/vtk-cv.def) | VTK + OpenCV + NumPy with headless (offscreen) rendering |
+| [`openfoam7.def`](example_apptainer_definitions/openfoam7.def) | OpenFOAM 7 CFD toolkit |
+| [`kali.def`](example_apptainer_definitions/kali.def) | Headless Kali Linux command-line tools |
+
+The files in [`old_definitions/`](example_apptainer_definitions/old_definitions/) are kept for reference only and are not maintained; use the definitions above instead.
 
 ## Apptainer
 
@@ -172,7 +193,7 @@ The `INPUT-BUILDFILE` is what specifies what will go into the container and can 
 * URI beginning with `docker-archive://` or `oci-archive://` to build from a saved Docker/OCI `.tar` archive
 * path to an existing container file (`.sif` or legacy `.simg`)
 * path to a directory of a sandbox container (an existing container built with `--sandbox`)
-* path to an Apptainer definition file (`.def`, see [`example_apptainer_recipes/`](example_apptainer_recipes/))
+* path to an Apptainer definition file (`.def`, see [`example_apptainer_definitions/`](example_apptainer_definitions/))
 
 Example `apptainer build` commands:
 ```bash
@@ -182,7 +203,7 @@ apptainer build --sandbox ~/ubuntu-container/ docker://ubuntu
 apptainer build ubuntu.sif ~/ubuntu-container/
 ## Converts a previously created sandbox container to a static .sif container
 
-apptainer build --fakeroot pytorch.sif example_apptainer_recipes/pytorch.def
+apptainer build --fakeroot pytorch.sif example_apptainer_definitions/pytorch.def
 ## Builds a container from a definition file without root
 ## (on older installs use `sudo apptainer build ...` instead)
 ```

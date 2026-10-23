@@ -1,0 +1,62 @@
+Bootstrap: docker
+From: ubuntu:24.04
+
+# Small, general-purpose Python container for CPU jobs.
+# Used by basic-cpu.sbatch, multicore-cpu.sbatch and array.sbatch.
+#
+# Build:
+#   mkdir -p ~/containers
+#   apptainer build --fakeroot ~/containers/cpu-example.sif cpu-example.def
+#
+# Run:
+#   apptainer exec ~/containers/cpu-example.sif python3 my_script.py
+#
+# Add the packages your own code needs to the pip install line below.
+
+%environment
+    export PATH=/opt/venv/bin:$PATH
+    export VIRTUAL_ENV=/opt/venv
+    # Keep packages from ~/.local (your home dir is mounted in the container)
+    # from leaking in and overriding the container's packages.
+    export PYTHONNOUSERSITE=1
+    export LC_ALL=C.UTF-8
+    export LANG=C.UTF-8
+
+%post
+    set -e
+    export DEBIAN_FRONTEND=noninteractive
+
+    apt-get update
+    apt-get install -y --no-install-recommends \
+        ca-certificates \
+        python3 \
+        python3-venv \
+        git \
+        vim
+    rm -rf /var/lib/apt/lists/*
+
+    # Ubuntu 24.04 blocks pip installs into the system Python, so use a venv
+    python3 -m venv /opt/venv
+    /opt/venv/bin/pip install --no-cache-dir --upgrade pip
+    /opt/venv/bin/pip install --no-cache-dir \
+        numpy \
+        scipy \
+        pandas \
+        matplotlib
+
+%test
+    python3 -c "import numpy, scipy, pandas; print('numpy', numpy.__version__, '| pandas', pandas.__version__)"
+
+%runscript
+    # `apptainer run cpu-example.sif my_script.py` runs python with your args
+    exec python3 "$@"
+
+%labels
+    Maintainer WSU CSE devteam
+    Description Small Python (NumPy/SciPy/pandas) container for CPU jobs
+
+%help
+    Small Python container for CPU jobs (Ubuntu 24.04, NumPy, SciPy, pandas,
+    matplotlib). Used by the CPU example job scripts in example_sbatch_files/.
+
+      apptainer exec cpu-example.sif python3 my_script.py

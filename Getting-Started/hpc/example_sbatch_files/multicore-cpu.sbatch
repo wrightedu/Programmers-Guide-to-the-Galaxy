@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# 02_multicore.sbatch
+# multicore-cpu.sbatch
 # One process that uses many cores on a single node.
 # Use for: Python multiprocessing, OpenMP, NumPy/MKL, make -j, etc.
 #
@@ -18,7 +18,7 @@
 
 set -euo pipefail
 
-# Blank example container, built from cpu-example.def
+# Small Python container, built from example_apptainer_definitions/cpu-example.def
 CONTAINER=/home/$USER/containers/cpu-example.sif
 
 # Make threaded libraries respect the allocation instead of grabbing every core.

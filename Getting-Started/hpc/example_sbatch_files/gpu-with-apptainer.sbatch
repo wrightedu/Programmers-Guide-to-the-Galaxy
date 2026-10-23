@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# 03_gpu_apptainer.sbatch
+# gpu-with-apptainer.sbatch
 # A GPU job (e.g. PyTorch training) run inside an Apptainer container.
 # Use for: deep learning, CUDA code, anything that needs the A100.
 #
@@ -18,11 +18,15 @@
 
 set -euo pipefail
 
-# Blank example container, built from gpu-example.def
-CONTAINER=/home/$USER/containers/gpu-example.sif
+# PyTorch container, built from example_apptainer_definitions/pytorch.def
+CONTAINER=/home/$USER/containers/pytorch.sif
 
 # Record which GPU you got, useful when debugging
 nvidia-smi
+
+# Make sure the checkpoint directory exists before the program writes to it
+CHECKPOINT_DIR=/home/$USER/checkpoints/$SLURM_JOB_ID
+mkdir -p "$CHECKPOINT_DIR"
 
 # --nv  : expose the GPU and NVIDIA driver libraries inside the container
 # -B    : bind extra host paths (only /home/$USER, /tmp and the current
@@ -33,4 +37,4 @@ srun apptainer exec --nv \
     python3 train.py \
         --data /scratch/$USER/dataset \
         --workers $SLURM_CPUS_PER_TASK \
-        --checkpoint-dir /home/$USER/checkpoints/$SLURM_JOB_ID
+        --checkpoint-dir "$CHECKPOINT_DIR"

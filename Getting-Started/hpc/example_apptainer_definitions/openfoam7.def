@@ -1,6 +1,17 @@
 Bootstrap: docker
 From: ubuntu:20.04
 
+# OpenFOAM 7 (openfoam.org) CFD toolkit container.
+#
+# Build:
+#   apptainer build --fakeroot openfoam7.sif openfoam7.def
+#
+# Run a solver (OpenFOAM's environment is loaded automatically):
+#   apptainer exec openfoam7.sif simpleFoam -help
+#
+# Interactive shell with OpenFOAM loaded:
+#   apptainer run openfoam7.sif
+
 %post
     export DEBIAN_FRONTEND=noninteractive
     apt-get update
@@ -28,3 +39,15 @@ From: ubuntu:20.04
 %runscript
     # Run the given command (or an interactive bash shell) with OpenFOAM loaded
     exec /bin/bash -c '. /opt/openfoam7/etc/bashrc && exec "$@"' bash "${@:-/bin/bash}"
+
+%labels
+    Maintainer WSU CSE devteam
+    Description OpenFOAM 7 (openfoam.org) on Ubuntu 20.04
+
+%help
+    OpenFOAM 7 container. OpenFOAM's environment is loaded on every
+    run/exec/shell, so solvers and utilities are on your PATH.
+
+      apptainer exec openfoam7.sif blockMesh
+      apptainer exec openfoam7.sif simpleFoam
+      apptainer run openfoam7.sif            # interactive shell
